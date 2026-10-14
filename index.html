@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="UTF-8">
+        <title>RemTexNik - сервісний центр</title>
+        <link rel="icon" type="image/png" href="images/remtexnik.png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+       <header class="site-header">
+        <section class="header-contact-details" aria-label="Контакти сервісного центру">
+            <h2>Контакти</h2>
+            <p class="header-contact-item">
+                <span class="header-contact-icon" aria-hidden="true">📍</span>
+                <span><strong>Адреса:</strong><br>м. Дніпро, провулок Фестивальний, 2, Лівобережний-3</span>
+            </p>
+            <p class="header-contact-item">
+                <span class="header-contact-icon" aria-hidden="true">☎</span>
+                <span><strong>Телефон:</strong><br><a href="tel:+380954932601">+38 (095) 493 26 01</a></span>
+            </p>
+            <p class="header-contact-item">
+                <span class="header-contact-icon" aria-hidden="true">◷</span>
+                <span><strong>Графік роботи:</strong><br>
+                    Пн–Чт: 09:00–19:00<br>
+                    Пт: 09:00–18:00<br>
+                    Сб: 10:00–15:00<br>
+                    Нд: вихідний
+                </span>
+            </p>
+        </section>
+
+        <div class="top-banner">
+            <img src="images/заголовок.jpg" alt="RemTexNik — сервісний центр">
+        </div>
+
+        <nav class="header-actions" aria-label="Швидкий зв’язок">
+            <button class="header-action-link" type="button" onclick="openContact()">
+                <span aria-hidden="true">☎</span> Замовити дзвінок
+            </button>
+            <button class="header-action-link" type="button" onclick="openQuestion()">
+                <span aria-hidden="true">?</span> Задати питання
+            </button>
+            <a class="header-action-link" href="blog.html">
+                <span aria-hidden="true">▤</span> Блог
+            </a>
+            <a class="header-action-link" href="reviews.html">
+                <span aria-hidden="true">★</span> Відгуки
+            </a>
+        </nav>
+        <nav class="site-pages-nav" aria-label="Сторінки сайту">
+            <a href="index.html" aria-current="page">Головна</a>
+            <a href="notebooks.html">Ноутбуки</a>
+            <a href="pc.html">Стаціонарні ПК</a>
+            <a href="software.html">Програмне забезпечення</a>
+            <a href="monitors.html">Монітори</a>
+            <a href="tv.html">Телевізори</a>
+            <a href="consoles.html">Ігрові приставки</a>
+            <a href="blog.html">Блог</a>
+            <a href="reviews.html">Відгуки</a>
+        </nav>
+       </header>
+       <main>
+        <h2>Оберіть категорію послуги</h2>
+        <div class="category-buttons">
+            <!-- кнопка для ноутбуков-->
+             <a href="notebooks.html" class="category-btn">
+                <!--картинка для ноутбука-->
+                <img src="images/кнопка ноутбука.png" alt="Ноутбуки">
+                <span>Ноутбуки</span>
+             </a>
+             <!-- кнопка для ПК-->
+              <a href="pc.html" class="category-btn">
+                <img src="images/кнопка ПК.jpg" alt="ПК">
+                <span>Стаціонарні ПК</span>
+              </a>
+              <!-- кнопка програмного обслуговування-->
+              <a href="software.html" class="category-btn">
+                <img src="images/кнопка виндовс.jpg" alt="Встановлення та налаштування програмного забезпечення">
+                <span>Програмне забезпечення</span>
+              </a>
+              <!-- кнопка для моніторів-->
+               <a href="monitors.html" class="category-btn">
+                <img src="images/кнопка монитор.jpg" alt="Монітори">
+                <span>Монітори</span>
+              </a>
+              <!-- кнопка для телевізорів-->
+               <a href="tv.html" class="category-btn">
+                <img src="images/кнопка Телевизор.jpeg" alt="Телевізори">
+                <span>Телевізори</span>
+              </a>
+              <!-- кнопка для ігрових приставок-->
+               <a href="consoles.html" class="category-btn">
+                <img src="images/кнопка игровые приставки.jpg" alt="Ігрові приставки">
+                <span>Ігрові приставки</span>
+              </a>
+        </div>
+        <section class="info-secnion">
+          <h3 class="info-title">Як проводиться ремонт</h3>
+
+          <div class="repair-steps">
+            <div class="repair-step">
+              <span class="step-icon">🔍</span>
+              <strong>Діагностика</strong>
+              <p>Знаходимо проблему несправності.</p>
+            </div>
+
+            <div class="repair-step">
+              <span class="step-icon">🤝</span>
+              <strong>Узгодження з клієнтом</strong>
+              <p>Після діагностики повідомляємо про необхідні роботи, їхню вартість і строки та узгоджуємо ремонт із вами.</p>
+            </div>
+
+            <div class="repair-step">
+              <span class="step-icon">🛠️</span>
+              <strong>Виконання ремонту</strong>
+              <p>Ремонтуємо пристрій та замінюємо несправні деталі.</p>
+            </div>
+
+            <div class="repair-step">
+              <span class="step-icon">✅</span>
+              <strong>Перевірка та тестування</strong>
+              <p>Перевіряємо працездатність пристрою після ремонту.</p>
+            </div>
+
+            <div class="repair-step">
+              <span class="step-icon">📞</span>
+              <strong>Повідомлення про готовність</strong>
+              <p>Телефонуємо, коли пристрій можна забрати.</p>
+            </div>
+
+            <div class="repair-step">
+              <span class="step-icon">📦</span>
+              <strong>Видача клієнту</strong>
+              <p>Повертаємо пристрій клієнту після успішного ремонту.</p>
+            </div>
+
+            <div class="repair-step">
+              <span class="step-icon">💳</span>
+              <strong>Оплата</strong>
+              <p>Клієнт оплачує послугу після отримання пристрою.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="info-section">
+          <h3 class="info-title">Наші послуги</h3>
+
+          <div class="services-layout">
+          <div class="service-cards">
+            <article class="service-card">
+               <h4>💻 Апаратний ремонт, збірка, модернізація комп’ютерів, ноутбуків</h4>
+            <p>Ремонтуємо, модернізуємо та замінюємо несправні комплектуючі:</p>
+            <ul>
+                <li>діагностика несправностей;</li>
+                <li>ремонт або заміна материнської плати;</li>
+                <li>ремонт або заміна відеокарти;</li>
+                <li>ремонт або заміна блока живлення;</li>
+                <li>заміна накопичувача HDD/SSD;</li>
+                <li>збільшення оперативної пам’яті.</li>
+                <li>збірка комп’ютерів.</li>
+            </ul>
+            </article>
+
+             <article class="service-card">
+            <h4>💾 Програмне обслуговування</h4>
+            <p>Допомагаємо, якщо проблема пов’язана з програмами або системою:</p>
+            <ul>
+                <li>встановлення та налаштування Windows;</li>
+                <li>видалення вірусів та шкідливих програм;</li>
+                <li>відновлення даних;</li>
+                <li>встановлення драйверів та програм.</li>
+            </ul>
+            </article>
+
+              <article class="service-card">
+            <h4>🧹 Профілактичне обслуговування</h4>
+            <p>Допомагаємо запобігти перегріванню та іншим несправностям:</p>
+            <ul>
+                <li>чистка комп’ютерів, ноутбуків, ігрових приставок від пилу;</li>
+                <li>чистка комплектуючих від пилу;</li>
+                <li>заміна термоінтерфейсів;</li>
+                <li>перевірка системи охолодження.</li>
+            </ul>
+            </article>
+
+            <article class="service-card">
+              <h4>🖥️ Ремонт моніторів</h4>
+              <p>Виконуємо ремонт та обслуговування моніторів:</p>
+              <ul>
+                <li>заміна матриці;</li>
+                <li>ремонт підсвічування;</li>
+                <li>ремонт блоку живлення;</li>
+                <li>ремонт плати управління.</li>
+              </ul>
+            </article>
+
+            <article class="service-card">
+              <h4>📺 Ремонт телевізорів</h4>
+              <p>Здійснюємо ремонт та обслуговування телевізорів:</p>
+              <ul>
+                <li>заміна матриці;</li>
+                <li>ремонт підсвічування;</li>
+                <li>ремонт блоку живлення;</li>
+                <li>ремонт плати управління.</li>
+              </ul>
+            </article>
+
+            <article class="service-card">
+              <h4>🎮 Ремонт ігрових приставок</h4>
+              <p>Проводимо ремонт та обслуговування ігрових приставок:</p>
+              <ul>
+                <li>ремонт або заміна материнської плати;</li>
+                <li>ремонт або заміна блока живлення;</li>
+                <li>заміна накопичувача HDD/SSD;</li>
+                <li>заміна контролера живлення;</li>
+                <li>ремонт або заміна оптичного приводу;</li>
+                <li>обслуговування ігрових приставок.</li>
+              </ul>
+            </article>
+
+
+          </div>
+
+          <aside class="delivery-partners" aria-label="Служби доставки">
+            <div class="delivery-logos">
+              <!-- ЛОГОТИП MEEST: замените путь в src, если используете другое изображение -->
+              <img src="images/мист.jpg" alt="Meest">
+
+              <!-- ЛОГОТИП УКРПОШТИ: замените путь в src, если используете другое изображение -->
+              <img src="images/укр почта.png" alt="Укрпошта">
+
+              <!-- ЛОГОТИП НОВОЇ ПОШТИ: замените путь в src, если используете другое изображение -->
+              <img src="images/новая почта.png" alt="Нова пошта">
+            </div>
+            <p>Відправляй із свого міста</p>
+          </aside>
+          </div>
+        </section>
+
+        <section class="info-section">
+    <h3 class="info-title">Поширені несправності</h3>
+
+    <ul class="problem-list">
+        <li>
+            <strong>Комп’ютер чи ноутбук не вмикається.</strong>
+            Натискаєте кнопку живлення, а у відповідь – тиша? Це може бути що завгодно: від блока живлення до материнської плати. Ми знайдемо причину.
+        </li>
+        <li>
+            <strong>ПК чи ноутбук повільно працює або зависає.</strong>
+            Можуть допомогти чистка системи, збільшення пам’яті або заміна накопичувача або абгрейдом.
+        </li>
+        <li>
+            <strong>З’являється синій або чорний екран.</strong>
+            Так званий "екран смерті" (BSOD) або просто чорний екран вказують на критичні помилки в апаратній або програмній частині.
+        </li>
+        <li>
+            <strong>Комп’ютер чи ноутбук перегрівається чи шумить.</strong>
+            Часто причина — пил або несправність системи охолодження.
+        </li>
+    </ul>
+        </section>
+
+        <section class="info-section">
+    <h3 class="info-title">Як відбувається ремонт</h3>
+
+    <ol class="repair-details">
+        <li><strong>Заявка.</strong> Залишаєте заявку або приносите пристрій до сервісного центру.</li>
+        <li><strong>Діагностика.</strong> Визначаємо причину несправності.</li>
+        <li><strong>Узгодження.</strong> Повідомляємо вартість та строки ремонту.</li>
+        <li><strong>Ремонт та перевірка.</strong> Виконуємо роботи та тестуємо пристрій.</li>
+    </ol>
+
+    <p>Після ремонту ви отримуєте справний пристрій та інформацію про виконані роботи.</p>
+        </section>
+
+
+        <section class="reviews-section" id="reviews">
+    <div class="reviews-heading">
+        <h2>ВІДГУКИ КЛІЄНТІВ</h2>
+        <button class="reviews-add" id="review-form-toggle" type="button">
+            ДОДАТИ ВІДГУК
+        </button>
+    </div>
+
+    <div class="reviews-grid" id="reviews-list"></div>
+
+    <button class="reviews-more" id="reviews-more" type="button" hidden>
+        Показати ще відгуки
+    </button>
+
+    <p class="reviews-message" id="reviews-message" role="status" aria-live="polite"></p>
+
+    <form class="reviews-form" id="review-form" hidden>
+        <label for="review-name">Ваше ім’я</label>
+        <input id="review-name" name="name" type="text" maxlength="60" required>
+
+        <fieldset class="review-rating">
+            <legend>Ваша оцінка</legend>
+            <div class="review-rating-options">
+                <input id="rating-1" name="rating" type="radio" value="1" required>
+                <label for="rating-1" aria-label="1 з 5 зірок">★</label>
+                <input id="rating-2" name="rating" type="radio" value="2">
+                <label for="rating-2" aria-label="2 з 5 зірок">★</label>
+                <input id="rating-3" name="rating" type="radio" value="3">
+                <label for="rating-3" aria-label="3 з 5 зірок">★</label>
+                <input id="rating-4" name="rating" type="radio" value="4">
+                <label for="rating-4" aria-label="4 з 5 зірок">★</label>
+                <input id="rating-5" name="rating" type="radio" value="5">
+                <label for="rating-5" aria-label="5 з 5 зірок">★</label>
+            </div>
+        </fieldset>
+
+        <label for="review-text">Ваш відгук</label>
+        <textarea id="review-text" name="text" rows="4" maxlength="1000" required></textarea>
+
+        <div class="reviews-form-buttons">
+            <button class="reviews-add" type="submit">Надіслати відгук</button>
+            <button class="reviews-cancel" id="review-cancel" type="button">Скасувати</button>
+        </div>
+    </form>
+</section>
+
+
+       </main>
+
+
+
+<div id="contact-modal" class="contact-modal callback-contact-modal" style="display:none;">
+  <div class="modal-content callback-modal-content">
+    <h3>Залиште свій номер</h3>
+    <form onsubmit="sendPhone(event)">
+      <input type="tel" id="phoneInput" value="+38 (0" autocomplete="tel" inputmode="numeric" required>
+      <button type="submit">Відправити</button>
+      <button type="button" onclick="closeContact()">Закрити</button>
+    </form>
+  </div>
+</div>
+
+<div id="question-modal" class="contact-modal" style="display:none;">
+    <div class="modal-content question-modal-content">
+      <h3>Задайте своє питання</h3>
+      <form id="question-form" onsubmit="sendQuestion(event)">
+        <label for="question-name">Ваше ім’я</label>
+        <input type="text" id="question-name" maxlength="60" autocomplete="name" required>
+        <label for="question-phone">Номер телефону</label>
+        <input type="tel" id="question-phone" value="+38 (0" autocomplete="tel" inputmode="numeric" required>
+        <label for="question-text">Питання</label>
+        <textarea id="question-text" rows="4" maxlength="1000" required></textarea>
+        <p id="question-message" role="status" aria-live="polite"></p>
+        <button type="submit">Надіслати питання</button>
+        <button type="button" onclick="closeQuestion()">Закрити</button>
+      </form>
+    </div>
+  </div>
+       
+
+<div class="callback-widget">
+    <button class="callback-widget-trigger" id="callback-widget-trigger" type="button"
+        aria-label="Замовити дзвінок" aria-expanded="false" aria-controls="callback-widget-panel">
+        <span aria-hidden="true">☎</span>
+    </button>
+    <form class="callback-widget-panel" id="callback-widget-panel" onsubmit="sendWidgetCallback(event)" hidden>
+        <button class="callback-widget-close" id="callback-widget-close" type="button"
+            aria-label="Закрити форму дзвінка">×</button>
+        <p>Передзвонимо Вам<br>найближчим часом!</p>
+        <label class="visually-hidden" for="callback-widget-phone">Номер телефону</label>
+        <input id="callback-widget-phone" type="tel" value="+38 (0" autocomplete="tel" inputmode="numeric" required>
+        <button class="callback-widget-submit" type="submit">Передзвоніть!</button>
+        <span class="callback-widget-message" id="callback-widget-message" role="status" aria-live="polite"></span>
+    </form>
+</div>
+
+<footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Контакти</h3>
+                <p><strong>Компанія:</strong><br>RemTexNik - сервісний центр, ремонт, обслуговування комп'ютерів, ноутбуків, моніторів, ігрових приставок, телевізорів</p>
+                <p class="footer-contact-item">
+                    <span class="footer-contact-icon" aria-hidden="true">📍</span>
+                    <span><strong>Адреса:</strong><br>
+                    місто Дніпро, провулок Фестивальний 2, Лівобережний-3</span>
+                </p>
+                <p class="footer-contact-item">
+                    <span class="footer-contact-icon" aria-hidden="true">☎</span>
+                    <span><strong>Телефон:</strong><br>
+                    <a href="tel:+380954932601">+38 (095) 493 26 01</a></span>
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Графік роботи</h3>
+                <p class="footer-contact-item">
+                    <span class="footer-contact-icon" aria-hidden="true">◷</span>
+                    <span>Понеділок: 09:00 - 19:00<br>
+                    Вівторок: 09:00 - 19:00<br>
+                    Середа: 09:00 - 19:00<br>
+                    Четвер: 09:00 - 19:00<br>
+                    П'ятниця: 09:00 - 18:00<br>
+                    Субота: 10:00 - 15:00<br>
+                    Неділя: Вихідний</span>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 RemTexNik. Сервісний центр з ремонту комп'ютерної техніки.</p>
+        </div>
+       </footer>
+         <script src="script.js"></script>
+    </body>
+</html>

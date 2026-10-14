@@ -1,0 +1,1458 @@
+/* ОБЩИЕ НАСТРОЙКИ СТРАНИЦЫ: основной шрифт */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/* ШАПКА САЙТА: фон, цвет текста и внутренние отступы */
+header {
+    background: #222;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+/* КАРТОЧКИ КАТЕГОРИЙ: расстояния и расположение карточек */
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 30px auto;
+    max-width: 900px;
+}
+
+/* КАРТОЧКИ КАТЕГОРИЙ: рамка, фон, размеры и скругление */
+.category-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    margin: 15px;
+    border-radius: 8px;
+    width: 230px;
+    transition: all 0.3s ease;
+    height: 230px;
+}
+/* КАРТИНКИ В КАРТОЧКАХ: width меняет ширину изображения */
+.category-btn img {
+    width: 130px;
+    height: auto;
+    margin-bottom: 10px;
+}
+/* ПОДПИСИ КАТЕГОРИЙ: font-size — размер, color — цвет букв */
+.category-btn:link,
+.category-btn:visited {
+    font-size: 20px;
+    color: #111;
+    text-decoration: underline;
+}
+/* НАВЕДЕНИЕ НА КАРТОЧКУ: цвет рамки и тень */
+.category-btn:hover {
+    border-color: #0078d7;
+    box-shadow: 0 0 15px rgba(0, 120,215,0.4);
+    transform: scale(1.05);
+}
+/* ТАБЛИЦЫ: ширина, границы ячеек и выравнивание текста */
+table {
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+
+/* Шапка: контакты, баннер и кнопки связи */
+.site-header {
+    display: grid;
+    grid-template-columns: minmax(210px, 1fr) minmax(400px, 2fr) minmax(190px, 1fr);
+    align-items: center;
+    gap: 20px;
+    padding: 12px 24px;
+    color: #fff;
+    text-align: left;
+    background: #071316 url("images/фон.jpg") center / cover no-repeat;
+}
+
+.header-contact-details {
+    box-sizing: border-box;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.76);
+    font-size: 14px;
+    line-height: 1.45;
+    text-shadow: 0 1px 3px #000;
+}
+
+.header-contact-details h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.header-contact-details p {
+    margin: 0 0 8px;
+}
+
+.header-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.header-contact-icon {
+    display: inline-grid;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    place-items: center;
+    font-size: 16px;
+    text-shadow: none;
+}
+
+.header-contact-details a {
+    color: #ffe9a8;
+}
+
+.header-actions {
+    display: grid;
+    gap: 14px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.76);
+}
+
+.header-action-link {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #ffe9a8;
+    cursor: pointer;
+    font: inherit;
+    font-size: 17px;
+    text-align: left;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.header-actions a.header-action-link {
+    color: #ffe9a8;
+}
+
+.header-actions a.header-action-link:visited {
+    color: #ffe9a8;
+}
+
+.header-action-link span {
+    display: inline-grid;
+    width: 28px;
+    height: 28px;
+    margin-right: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    place-items: center;
+    text-decoration: none;
+}
+
+.header-action-link:hover {
+    color: #fff;
+}
+
+.header-actions a.header-action-link:hover {
+    color: #fff;
+}
+
+.site-pages-nav {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.76);
+}
+
+.site-pages-nav a {
+    padding: 7px 11px;
+    border-radius: 5px;
+    color: #ffe9a8;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.site-pages-nav a:hover,
+.site-pages-nav a:focus-visible,
+.site-pages-nav a[aria-current="page"] {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.console-service-cards .service-card h2 {
+    display: block;
+    margin: 0 0 10px;
+    color: #132b44;
+    font-size: 19px;
+    text-shadow: none;
+}
+
+.console-service-cards .service-card h2::before,
+.console-service-cards .service-card h2::after {
+    content: none;
+}
+
+.console-service-cards .service-card p {
+    margin-bottom: 0;
+}
+
+.console-phone-link {
+    color: #132b44;
+}
+
+.blog-page {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.blog-post {
+    padding: 20px;
+    border-left: 5px solid #9acb3c;
+    border-radius: 8px;
+    background: #f3f6f8;
+    color: #222;
+    line-height: 1.6;
+}
+
+.blog-post h3 {
+    margin-top: 0;
+}
+
+.blog-post p:last-child {
+    margin-bottom: 0;
+}
+
+.monitor-price-page {
+    max-width: 1380px;
+    margin: 16px auto;
+    padding: clamp(18px, 4vw, 48px);
+    border-radius: 16px;
+    background:
+        linear-gradient(rgba(4, 17, 25, 0.78), rgba(4, 17, 25, 0.86)),
+        url("images/фон.jpg") center / cover fixed;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+}
+
+.monitor-price-card {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: clamp(18px, 3vw, 36px);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+    cursor: default;
+}
+
+.monitor-price-card h1 {
+    margin: 0 0 24px;
+    color: #132b44;
+    font-size: clamp(25px, 3vw, 36px);
+    text-align: center;
+}
+
+.monitor-price-card h1 span {
+    margin-right: 8px;
+}
+
+.monitor-price-card .device-price-section-title {
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 28px 0 16px;
+    color: #132b44;
+    font-size: clamp(21px, 2.5vw, 27px);
+    text-shadow: none;
+}
+
+.monitor-price-card .device-price-section-title::before,
+.monitor-price-card .device-price-section-title::after {
+    content: none;
+}
+
+.monitor-table-scroll {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px rgba(20, 45, 75, 0.12);
+}
+
+.monitor-table-scroll:focus-visible {
+    outline: 3px solid #f1bf35;
+    outline-offset: 3px;
+}
+
+table.monitor-price-table {
+    width: 100%;
+    min-width: 760px;
+    margin: 0;
+    border-collapse: collapse;
+    color: #182536;
+    font-size: 15px;
+}
+
+.monitor-price-table th,
+.monitor-price-table td {
+    padding: 9px 12px;
+    border: 1px solid #8ea9cf;
+    text-align: center;
+    line-height: 1.35;
+}
+
+.monitor-price-table thead th {
+    background: #426eb8;
+    color: #fff;
+    font-weight: 700;
+}
+
+.monitor-price-table thead th span {
+    margin-right: 4px;
+}
+
+.monitor-price-table tbody tr:nth-child(odd) {
+    background: #dce6f5;
+}
+
+.monitor-price-table tbody tr:nth-child(even) {
+    background: #fff;
+}
+
+.monitor-price-table tbody tr:hover {
+    background: #c7daf4;
+}
+
+.monitor-price-table tbody th {
+    text-align: left;
+    font-weight: 600;
+}
+
+.monitor-price-notes {
+    margin-top: 36px;
+    padding: 18px 22px;
+    border: 1px solid #d8a92e;
+    border-left: 6px solid #e7b52e;
+    border-radius: 8px;
+    background: #fff0b8;
+    color: #352b16;
+}
+
+.monitor-price-notes h2 {
+    display: block;
+    margin: 0 0 12px;
+    color: inherit;
+    font-size: 21px;
+    text-shadow: none;
+}
+
+.monitor-price-notes h2::before,
+.monitor-price-notes h2::after {
+    content: none;
+}
+
+.monitor-price-notes ul {
+    margin: 0;
+    padding-left: 24px;
+    line-height: 1.6;
+}
+
+.pc-liquid-note {
+    margin: 12px 0 24px;
+    padding: 14px 18px;
+    border: 1px solid #76b83d;
+    border-radius: 8px;
+    background: #c7ed9f;
+    color: #244a18;
+    font-weight: 700;
+}
+
+@media (max-width: 700px) {
+    .blog-posts {
+        grid-template-columns: 1fr;
+    }
+
+    .monitor-price-page {
+        margin: 0;
+        padding: 16px 10px;
+        border-radius: 0;
+        background-attachment: scroll;
+    }
+
+    .monitor-price-card {
+        padding: 18px 12px;
+    }
+
+    .monitor-price-card h1 {
+        margin-bottom: 18px;
+    }
+
+    .monitor-price-table th,
+    .monitor-price-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .monitor-price-notes {
+        margin-top: 22px;
+        padding: 15px;
+    }
+}
+
+/* Центральный баннер */
+.top-banner {
+    position: relative;
+    min-width: 0;
+    height: clamp(220px, 28vw, 340px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* ИЗОБРАЖЕНИЕ БАННЕРА: размер и способ вписывания в блок */
+.top-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+@media (max-width: 1000px) {
+    .site-header {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+    }
+
+    .header-actions {
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-items: center;
+        padding: 8px 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .site-header {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 14px 16px;
+    }
+
+    .top-banner {
+        grid-row: 1;
+        height: clamp(150px, 55vw, 240px);
+    }
+
+    .header-contact-details {
+        display: block;
+    }
+
+    .header-contact-details h2 {
+        margin-bottom: 10px;
+    }
+
+    .header-contact-details p {
+        margin-bottom: 10px;
+    }
+
+    .header-actions {
+        grid-column: auto;
+        justify-items: stretch;
+    }
+
+    .header-action-link {
+        font-size: 15px;
+    }
+}
+
+/* ОСНОВНОЙ КОНТЕНТ: верхний отступ, внутренние поля и фон */
+ main {
+    flex: 1 0 auto;
+    margin-top: 0;
+    padding: 20px;
+    background: #f9f9f9;
+ }
+ /* ПОДВАЛ САЙТА: фоновый цвет, цвет текста и отступы */
+ .site-footer {
+    flex-shrink: 0;
+    margin-top: auto;
+    background-color: #2b2b2b;
+    color: #f1f1f1;
+    padding: 40px 20px 20px;
+    font-family: Arial, sans-serif;
+ }
+/* СОДЕРЖИМОЕ ПОДВАЛА: расположение колонок и максимальная ширина */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* КОЛОНКИ ПОДВАЛА: ширина и расстояние между блоками */
+.footer-column {
+    width: 45%;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.footer-contact-icon {
+    display: inline-grid;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    place-items: center;
+    font-size: 16px;
+}
+
+.footer-contact-item > span:last-child {
+    min-width: 0;
+}
+
+/* ПОДВАЛ НА ТЕЛЕФОНАХ: колонки занимают всю ширину */
+@media (max-width: 640px) {
+    .footer-column {
+        width: 100%;
+        min-width: 0;
+    }
+}
+/* ЗАГОЛОВКИ КОЛОНОК ПОДВАЛА: color задаёт цвет букв */
+.footer-column h3 {
+    color: #ffb400;
+    margin-bottom: 10px;
+}
+/* ССЫЛКИ В ПОДВАЛЕ: цвет и подчёркивание */
+.footer-column a {
+    color: #ffb400;
+    text-decoration: none;
+}
+.footer-column a:hover {
+    text-decoration: underline;
+}
+/* НИЖНЯЯ СТРОКА ПОДВАЛА: выравнивание, размер и цвет текста */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+
+/* ГЛАВНЫЙ ЗАГОЛОВОК: font-size — размер, color — цвет, text-shadow — тень текста */
+main h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #111;
+    margin: 40px 0;
+    gap: 20px; /* расстояние между линиями и текстом */
+    text-shadow: 2px 2px 4px #888; /* лёгкая тень для текста */
+}
+
+/* ЛИНИИ ПО БОКАМ ЗАГОЛОВКА: height — толщина, background-color — цвет */
+main h2::before,
+main h2::after {
+    content: "";
+    flex: 1; /* линии растягиваются по ширине */
+    height: 2px;
+    background-color: #111;
+     box-shadow: 0 3px #111; /* создаёт вторую линию под первой */
+}
+
+
+
+/* КНОПКА СВЯЗИ: положение, фон, цвет текста и размер букв */
+.contact-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background-color: #0078D7;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    white-space: nowrap;
+}
+/* КНОПКА СВЯЗИ ПРИ НАВЕДЕНИИ: цвет фона и масштаб */
+.contact-btn:hover {
+    background-color: #005fa3;
+    transform: scale(1.1);
+}
+
+.callback-widget {
+    position: fixed;
+    z-index: 9000;
+    bottom: 28px;
+    left: 28px;
+}
+
+.callback-widget-trigger {
+    display: grid;
+    width: 66px;
+    height: 66px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #f5c400;
+    color: #fff;
+    cursor: pointer;
+    place-items: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.callback-widget-trigger:hover {
+    transform: scale(1.06);
+    background: #e8b900;
+}
+
+.callback-widget-trigger span {
+    font-size: 32px;
+    line-height: 1;
+}
+
+.callback-widget-panel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-sizing: border-box;
+    width: min(560px, calc(100vw - 32px));
+    min-height: 72px;
+    padding: 12px 14px 12px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 42px;
+    background: rgba(13, 17, 17, 0.94);
+    color: #fff;
+    box-shadow: 0 5px 22px rgba(0, 0, 0, 0.35);
+}
+
+.callback-widget-panel[hidden] {
+    display: none;
+}
+
+.callback-widget-panel p {
+    flex: 1 1 170px;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.callback-widget-panel input {
+    box-sizing: border-box;
+    width: 142px;
+    min-width: 0;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 22px;
+    background: transparent;
+    color: #fff;
+    font: inherit;
+}
+
+.callback-widget-panel input::placeholder {
+    color: #ddd;
+}
+
+.callback-widget-panel input:focus {
+    outline: 2px solid #f5c400;
+    outline-offset: 2px;
+}
+
+.callback-widget-submit {
+    flex: 0 0 auto;
+    padding: 9px 14px;
+    border: 0;
+    border-radius: 22px;
+    background: #f5c400;
+    color: #171717;
+    cursor: pointer;
+    font: inherit;
+    font-weight: bold;
+}
+
+.callback-widget-submit:hover {
+    background: #ffda36;
+}
+
+.callback-widget-submit:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+.callback-widget-close {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    display: grid;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #f5c400;
+    color: #171717;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 1;
+    place-items: center;
+}
+
+.callback-widget-message {
+    position: absolute;
+    right: 18px;
+    bottom: -24px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 600px) {
+    .callback-widget {
+        bottom: 18px;
+        left: 16px;
+    }
+
+    .callback-widget-trigger {
+        width: 58px;
+        height: 58px;
+    }
+
+    .callback-widget-panel {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 10px;
+        width: min(340px, calc(100vw - 32px));
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .callback-widget-panel p {
+        flex: initial;
+        padding-right: 20px;
+    }
+
+    .callback-widget-panel input {
+        width: 100%;
+        min-height: 42px;
+    }
+
+    .callback-widget-submit {
+        min-height: 42px;
+    }
+
+    .callback-widget-message {
+        position: static;
+    }
+}
+
+/* ЗАТЕМНЕНИЕ ПОД МОДАЛЬНЫМ ОКНОМ: цвет/прозрачность и расположение */
+.contact-modal {
+    position: fixed;
+        inset: 0;
+        padding: 16px;
+        box-sizing: border-box;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+}
+
+.callback-contact-modal {
+    background: rgba(3, 12, 16, 0.78);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content.callback-modal-content {
+    width: min(100%, 420px);
+    padding: 30px 24px;
+    border: 1px solid rgba(0, 120, 215, 0.18);
+    border-radius: 14px;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.38);
+}
+
+.modal-content.callback-modal-content h3 {
+    margin: 0 0 24px;
+    color: #183449;
+    font-size: 23px;
+}
+
+.modal-content.callback-modal-content form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.modal-content.callback-modal-content input {
+    margin: 0 0 8px;
+    padding: 11px 12px;
+    border: 1px solid #cbd5df;
+    border-radius: 8px;
+    background: #f8fafc;
+    color: #172b3a;
+    font: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.modal-content.callback-modal-content input:focus {
+    outline: none;
+    border-color: #087dcc;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(8, 125, 204, 0.15);
+}
+
+.modal-content.callback-modal-content button {
+    min-height: 42px;
+    margin: 0 4px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.modal-content.callback-modal-content button[type="button"] {
+    border: 1px solid #cbd5df;
+    background: #eef3f6;
+    color: #40536a;
+}
+
+.modal-content.callback-modal-content button[type="button"]:hover {
+    background: #dfe8ee;
+}
+
+/* СОДЕРЖИМОЕ МОДАЛЬНОГО ОКНА: ширина, фон, отступы и выравнивание */
+.modal-content {
+    box-sizing: border-box;
+    width: min(100%, 370px);
+  background: #fff;
+    padding: 25px 24px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* ПОЛЕ ВВОДА В МОДАЛЬНОМ ОКНЕ: ширина, рамка и внутренние отступы */
+.modal-content input {
+    box-sizing: border-box;
+    width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-content textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 90px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font: inherit;
+    resize: vertical;
+}
+
+.modal-content label {
+    display: block;
+    text-align: left;
+}
+
+.modal-content #question-message {
+    min-height: 1.2em;
+    margin: 4px 0;
+}
+
+/* КНОПКИ МОДАЛЬНОГО ОКНА: фон и цвет текста */
+.modal-content button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0078D7;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* КНОПКИ МОДАЛЬНОГО ОКНА ПРИ НАВЕДЕНИИ: цвет фона */
+.modal-content button:hover {
+  background-color: #005fa3;
+}
+
+.contact-modal:has(.question-modal-content) {
+    background: rgba(3, 12, 16, 0.78);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.question-modal-content {
+    width: min(100%, 480px);
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    padding: 30px;
+    border: 1px solid rgba(0, 120, 215, 0.18);
+    border-radius: 16px;
+    text-align: left;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.38);
+}
+
+.question-modal-content h3 {
+    margin: 0 0 24px;
+    color: #183449;
+    font-size: 24px;
+    text-align: center;
+}
+
+.question-modal-content form {
+    display: grid;
+    gap: 8px;
+}
+
+.question-modal-content label {
+    margin-top: 6px;
+    color: #30485a;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.question-modal-content input,
+.question-modal-content textarea {
+    margin: 0 0 8px;
+    border: 1px solid #cbd5df;
+    border-radius: 8px;
+    background: #f8fafc;
+    color: #172b3a;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.question-modal-content textarea {
+    min-height: 120px;
+}
+
+.question-modal-content input:focus,
+.question-modal-content textarea:focus {
+    outline: none;
+    border-color: #087dcc;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(8, 125, 204, 0.15);
+}
+
+.question-modal-content #question-message {
+    color: #40536a;
+    font-size: 14px;
+}
+
+.question-modal-content button {
+    min-height: 42px;
+    margin: 0;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.question-modal-content button[type="submit"] {
+    margin-top: 4px;
+}
+
+.question-modal-content button[type="button"] {
+    border: 1px solid #cbd5df;
+    background: #eef3f6;
+    color: #40536a;
+}
+
+.question-modal-content button[type="button"]:hover {
+    background: #dfe8ee;
+}
+
+@media (max-width: 480px) {
+    .modal-content.callback-modal-content {
+        padding: 24px 18px;
+        border-radius: 12px;
+    }
+
+    .modal-content.callback-modal-content h3 {
+        font-size: 21px;
+    }
+
+    .question-modal-content {
+        padding: 22px 18px;
+        border-radius: 12px;
+    }
+
+    .question-modal-content h3 {
+        font-size: 21px;
+    }
+}
+
+/* ИНФОРМАЦИОННЫЕ БЛОКИ: максимальная ширина и расстояние между секциями */
+.info-section {
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+/* ЗАГОЛОВКИ ИНФОРМАЦИОННЫХ БЛОКОВ: размер и цвет букв */
+.info-title {
+    margin: 0 0 25px;
+    color: #222;
+    font-size: 26px;
+}
+
+/* ЭТАПЫ РЕМОНТА: расположение шагов и расстояние между ними */
+.repair-steps {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+}
+
+/* КАРТОЧКА ЭТАПА: внутренние отступы, скругление, фон и цвет текста */
+.repair-step {
+    position: relative;
+    flex: 1;
+    padding: 20px 15px;
+    border-radius: 10px;
+    background: #d9ecff;
+    color: #222;
+}
+
+/* СТРЕЛКИ МЕЖДУ ЭТАПАМИ: цвет, размер и положение */
+.repair-step:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    top: 35px;
+    right: -17px;
+    color: #0078d7;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* ЗНАЧКИ ЭТАПОВ: размер символа */
+.step-icon {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.repair-step p {
+    margin-bottom: 0;
+}
+
+/* КАРТОЧКИ УСЛУГ: число колонок и расстояние между ними */
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* ОФОРМЛЕНИЕ КАРТОЧЕК УСЛУГ: рамка, фон, цвет текста и высота строки */
+.service-card {
+    padding: 10px;
+    border-left: 5px solid #9acb3c;
+    border-radius: 8px;
+    background: #d4fccd;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* ЗАГОЛОВКИ КАРТОЧЕК УСЛУГ: размер букв */
+.service-card h4 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.services-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    align-items: center;
+    gap: 32px;
+}
+
+.delivery-partners {
+    width: 100%;
+    text-align: center;
+    transform: translate(100px, -100px);
+}
+
+.delivery-logos {
+    display: flex;
+    flex-direction: column;
+}
+
+.delivery-logos img {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 105px;
+    border: 0;
+    object-fit: contain;
+}
+
+.delivery-partners p {
+    margin: 8px 0 0;
+    color: #40536a;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* СПИСКИ НЕИСПРАВНОСТЕЙ И ЭТАПОВ: цвет текста и расстояние между строками */
+.problem-list,
+.repair-details {
+    color: #222;
+    line-height: 1.8;
+}
+
+/* МОБИЛЬНАЯ ВЁРСТКА: перестройка этапов и карточек на узком экране */
+@media (max-width: 700px) {
+    .repair-steps {
+        flex-direction: column;
+    }
+
+    .repair-step:not(:last-child)::after {
+        content: "↓";
+        top: auto;
+        right: 50%;
+        bottom: -25px;
+        transform: translateX(50%);
+    }
+
+    .service-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .services-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .delivery-logos {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .delivery-logos img {
+        flex: 1;
+        min-width: 0;
+        height: 90px;
+    }
+
+    .delivery-partners {
+        transform: none;
+    }
+}
+
+/* Блок отзывов */
+.reviews-section {
+    --review-card-bg: #010e11;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 16px;
+    color: #40536a;
+}
+
+.reviews-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+/* Переопределение общих стилей заголовка main h2 */
+main .reviews-heading h2 {
+    justify-content: flex-start;
+    margin: 0;
+    color: #40536a;
+    font-size: 20px;
+    font-weight: normal;
+    text-shadow: none;
+}
+
+main .reviews-heading h2::before,
+main .reviews-heading h2::after {
+    content: none;
+}
+
+/* Сетка карточек отзывов */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.review-card {
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 225px;
+    padding: 24px 20px;
+    border-radius: 22px;
+    background-color: var(--review-card-bg);
+    color: #f8f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.review-stars {
+    margin-bottom: 10px;
+    color: #ffdf00;
+    font-size: 22px;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.review-rating {
+    margin: 4px 0;
+    padding: 0;
+    border: 0;
+}
+
+.review-rating legend {
+    margin-bottom: 6px;
+}
+
+.review-rating-options {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: max-content;
+}
+
+.reviews-form .review-rating-options input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.review-rating-options label {
+    color: #9aa0a6;
+    cursor: pointer;
+    font-size: 28px;
+    line-height: 1;
+}
+
+.review-rating-options input:checked ~ label,
+.review-rating-options label:hover,
+.review-rating-options label:hover ~ label {
+    color: #ffdf00;
+}
+
+.reviews-form .review-rating-options input:focus-visible + label {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+.review-card .review-text {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin: 0 0 16px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    text-align: justify;
+    text-align-last: center;
+}
+
+.review-card .review-text::after {
+    content: none;
+}
+
+.review-details-toggle {
+    margin: -10px 0 16px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #8a8a8a;
+    cursor: pointer;
+    font: inherit;
+}
+
+.review-details-toggle:hover {
+    color: #c5c5c5;
+    text-decoration: underline;
+}
+
+.review-details-toggle:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+.review-author-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-top: auto;
+}
+
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #59636e;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.review-card .review-author {
+    margin: 0;
+    color: inherit;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Кнопки блока */
+.reviews-add,
+.reviews-cancel,
+.reviews-more {
+    padding: 10px 18px;
+    border: 1px solid #cbd4dc;
+    border-radius: 5px;
+    background: #eef3f6;
+    color: #40536a;
+    cursor: pointer;
+    font: inherit;
+}
+
+.reviews-add:hover,
+.reviews-cancel:hover,
+.reviews-more:hover {
+    background: #dfe8ee;
+}
+
+.reviews-more {
+    display: block;
+    width: 100%;
+    margin-top: 36px;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+/* Форма добавления отзыва */
+.reviews-form {
+    display: grid;
+    gap: 10px;
+    max-width: 600px;
+    margin: 28px auto 0;
+}
+
+.reviews-form input,
+.reviews-form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd4dc;
+    border-radius: 5px;
+    font: inherit;
+}
+
+.reviews-form-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.reviews-message {
+    min-height: 1.4em;
+}
+
+/* Не даём стилям display перекрыть атрибут hidden */
+.reviews-section [hidden] {
+    display: none !important;
+}
+
+/* Отображение на небольших экранах */
+@media (max-width: 700px) {
+    .reviews-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .review-card {
+        min-height: 200px;
+    }
+
+    .review-card .review-text {
+        min-height: 0;
+    }
+}

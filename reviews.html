@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Відгуки клієнтів — RemTexNik</title>
+    <link rel="icon" type="image/png" href="images/remtexnik.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <section class="header-contact-details" aria-label="Контакти сервісного центру">
+            <h2>Контакти</h2>
+            <p class="header-contact-item">
+                <span class="header-contact-icon" aria-hidden="true">📍</span>
+                <span><strong>Адреса:</strong><br>м. Дніпро, провулок Фестивальний, 2, Лівобережний-3</span>
+            </p>
+            <p class="header-contact-item">
+                <span class="header-contact-icon" aria-hidden="true">☎</span>
+                <span><strong>Телефон:</strong><br><a href="tel:+380954932601">+38 (095) 493 26 01</a></span>
+            </p>
+            <p class="header-contact-item">
+                <span class="header-contact-icon" aria-hidden="true">◷</span>
+                <span><strong>Графік роботи:</strong><br>
+                    Пн–Чт: 09:00–19:00<br>
+                    Пт: 09:00–18:00<br>
+                    Сб: 10:00–15:00<br>
+                    Нд: вихідний
+                </span>
+            </p>
+        </section>
+
+        <a class="top-banner" href="index.html" aria-label="RemTexNik — на головну">
+            <img src="images/заголовок.jpg" alt="RemTexNik — сервісний центр">
+        </a>
+
+        <nav class="header-actions" aria-label="Навігація сайтом">
+            <a class="header-action-link" href="index.html"><span aria-hidden="true">⌂</span> Головна</a>
+            <a class="header-action-link" href="blog.html"><span aria-hidden="true">▤</span> Блог</a>
+            <a class="header-action-link" href="reviews.html" aria-current="page"><span aria-hidden="true">★</span> Відгуки</a>
+            <a class="header-action-link" href="tel:+380954932601"><span aria-hidden="true">☎</span> Замовити дзвінок</a>
+        </nav>
+        <nav class="site-pages-nav" aria-label="Сторінки сайту">
+            <a href="index.html">Головна</a>
+            <a href="notebooks.html">Ноутбуки</a>
+            <a href="pc.html">Стаціонарні ПК</a>
+            <a href="software.html">Програмне забезпечення</a>
+            <a href="monitors.html">Монітори</a>
+            <a href="tv.html">Телевізори</a>
+            <a href="consoles.html">Ігрові приставки</a>
+            <a href="blog.html">Блог</a>
+            <a href="reviews.html" aria-current="page">Відгуки</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="reviews-section" id="reviews">
+            <div class="reviews-heading">
+                <h2>ВІДГУКИ КЛІЄНТІВ</h2>
+                <button class="reviews-add" id="review-form-toggle" type="button">ДОДАТИ ВІДГУК</button>
+            </div>
+
+            <div class="reviews-grid" id="reviews-list"></div>
+            <button class="reviews-more" id="reviews-more" type="button" hidden>Показати ще відгуки</button>
+            <p class="reviews-message" id="reviews-message" role="status" aria-live="polite"></p>
+
+            <form class="reviews-form" id="review-form" hidden>
+                <label for="review-name">Ваше ім’я</label>
+                <input id="review-name" name="name" type="text" maxlength="60" required>
+
+                <fieldset class="review-rating">
+                    <legend>Ваша оцінка</legend>
+                    <div class="review-rating-options">
+                        <input id="rating-1" name="rating" type="radio" value="1" required>
+                        <label for="rating-1" aria-label="1 з 5 зірок">★</label>
+                        <input id="rating-2" name="rating" type="radio" value="2">
+                        <label for="rating-2" aria-label="2 з 5 зірок">★</label>
+                        <input id="rating-3" name="rating" type="radio" value="3">
+                        <label for="rating-3" aria-label="3 з 5 зірок">★</label>
+                        <input id="rating-4" name="rating" type="radio" value="4">
+                        <label for="rating-4" aria-label="4 з 5 зірок">★</label>
+                        <input id="rating-5" name="rating" type="radio" value="5">
+                        <label for="rating-5" aria-label="5 з 5 зірок">★</label>
+                    </div>
+                </fieldset>
+
+                <label for="review-text">Ваш відгук</label>
+                <textarea id="review-text" name="text" rows="4" maxlength="1000" required></textarea>
+
+                <div class="reviews-form-buttons">
+                    <button class="reviews-add" type="submit">Надіслати відгук</button>
+                    <button class="reviews-cancel" id="review-cancel" type="button">Скасувати</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <div class="callback-widget">
+        <button class="callback-widget-trigger" id="callback-widget-trigger" type="button"
+            aria-label="Замовити дзвінок" aria-expanded="false" aria-controls="callback-widget-panel">
+            <span aria-hidden="true">☎</span>
+        </button>
+        <form class="callback-widget-panel" id="callback-widget-panel" onsubmit="sendWidgetCallback(event)" hidden>
+            <button class="callback-widget-close" id="callback-widget-close" type="button"
+                aria-label="Закрити форму дзвінка">×</button>
+            <p>Передзвонимо Вам<br>найближчим часом!</p>
+            <label class="visually-hidden" for="callback-widget-phone">Номер телефону</label>
+            <input id="callback-widget-phone" type="tel" value="+38 (0" autocomplete="tel" inputmode="numeric" required>
+            <button class="callback-widget-submit" type="submit">Передзвоніть!</button>
+            <span class="callback-widget-message" id="callback-widget-message" role="status" aria-live="polite"></span>
+        </form>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 RemTexNik. Сервісний центр з ремонту комп'ютерної техніки.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
