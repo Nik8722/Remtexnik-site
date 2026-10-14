@@ -257,7 +257,10 @@ async function serveStatic(urlPath, response) {
     return;
   }
 
-  const requestedPath = decodedPath === "/" ? "/index.html" : decodedPath;
+  const requestedPath =
+    decodedPath === "/" || decodedPath === "/golovna"
+      ? "/index.html"
+      : decodedPath;
   const filePath = path.resolve(publicRoot, `.${requestedPath}`);
   const relativePath = path.relative(publicRoot, filePath);
   const extension = path.extname(filePath).toLowerCase();
@@ -291,6 +294,12 @@ async function serveStatic(urlPath, response) {
 
 const server = http.createServer(async (request, response) => {
   const requestUrl = new URL(request.url, "http://localhost");
+  if (requestUrl.pathname === "/index.html") {
+    response.writeHead(301, { Location: "/golovna" });
+    response.end();
+    return;
+  }
+
   if (requestUrl.pathname === "/api/reviews") {
     await handleReviews(request, response);
     return;
