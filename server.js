@@ -275,7 +275,13 @@ async function serveStatic(urlPath, response) {
 
   try {
     const contents = await fs.readFile(filePath);
-    response.writeHead(200, { "Content-Type": contentTypes[extension] });
+    const cacheControl = [".html", ".css", ".js"].includes(extension)
+      ? "no-cache"
+      : "public, max-age=86400";
+    response.writeHead(200, {
+      "Cache-Control": cacheControl,
+      "Content-Type": contentTypes[extension]
+    });
     response.end(contents);
   } catch {
     response.writeHead(404);
