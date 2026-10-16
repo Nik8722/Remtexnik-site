@@ -11,7 +11,13 @@ const adminUserId = String(process.env.TELEGRAM_ADMIN_USER_ID || (/^\d+$/.test(p
 // Use a deterministic secret derived from the existing private bot token.
 const webhookSecret = botToken ? createHash("sha256").update(botToken + ":review-webhook-v1").digest("hex") : "";
 const siteUrl = (process.env.SITE_PUBLIC_URL || "https://remtexnik-site.onrender.com").replace(/\/$/, "");
-const enabled = Boolean(githubToken && botToken && adminUserId && webhookSecret && siteUrl);
+const chatId = String(process.env.TELEGRAM_CHAT_ID || "");
+const enabled = Boolean(githubToken && botToken && chatId && webhookSecret && siteUrl);
+const missingSettings = ["GH_REVIEWS_TOKEN", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"].filter((key) => !process.env[key]);
+if (enabled && chatId.startsWith("-") && !adminUserId) {
+  console.warn("Review moderation: group chat requires TELEGRAM_ADMIN_USER_ID.");
+}
+console.log("Review moderation: " + (enabled ? "configured" : "inactive; missing " + missingSettings.join(", ")));
 
 async function telegram(method, payload) {
   const response = await fetch(`https://api.telegram.org/bot${botToken}/${method}`, {
@@ -113,7 +119,8 @@ function authenticated(request) {
 async function processUpdate(update) {
   const query = update?.callback_query;
   if (!query) return;
-  if (String(query.from?.id) !== adminUserId) {
+  const isPrivateOwner = query.message?.chat?.type === "private" && String(query.message?.chat?.id) === chatId && String(query.from?.id) === chatId;
+  if (String(query.from?.id) !== adminUserId && !isPrivateOwner) {
     await telegram("answerCallbackQuery", { callback_query_id: query.id, text: "Лише адміністратор може керувати відгуками.", show_alert: true });
     return;
   }
