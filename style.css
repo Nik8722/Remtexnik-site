@@ -1492,3 +1492,70 @@ main .reviews-heading h2::after {
         min-height: 0;
     }
 }
+
+/* RemTexNik • finishing polish, accessible dark/cyan identity */
+:root { color-scheme: light; --rt-navy:#071d2a; --rt-cyan:#16ccd5; }
+*, *::before, *::after {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {overflow-x:hidden;color:#142c3b;line-height:1.55}
+img {max-width:100%}
+a, button { -webkit-tap-highlight-color:transparent }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {outline:3px solid #0bc6d9;outline-offset:3px}
+.site-header {background-color:#071d2a;background-image:linear-gradient(110deg,rgba(3,17,30,.84),rgba(3,29,44,.6)),url("images/фон-оптимизирован.jpg")}
+.header-contact-details,.header-actions,.site-pages-nav {border:1px solid rgba(33,216,228,.32);border-radius:14px;background:rgba(2,17,27,.88);box-shadow:0 10px 28px rgba(0,0,0,.18)}
+.site-pages-nav a,.header-action-link,.header-actions a.header-action-link,.header-contact-details a{color:#b8f9ff}
+.site-pages-nav a:hover,.site-pages-nav a:focus-visible,.site-pages-nav a[aria-current="page"] {background:rgba(24,208,221,.2);color:#fff}
+main {background:linear-gradient(180deg,#f0f8fb 0%,#fff 50%,#eef6f9 100%)}
+.home-main-title {max-width:1000px;margin:20px auto 8px;text-align:center;color:#09283c;font-size:clamp(1.65rem,4vw,2.7rem);line-height:1.2}
+.home-lead {max-width:850px;margin:0 auto 28px;text-align:center;color:#36566a;font-size:clamp(1rem,2vw,1.17rem)}
+.category-buttons {max-width:1160px;gap:16px;margin:26px auto 40px}
+.category-btn {margin:0;min-width:0;width:clamp(205px,27vw,270px);height:230px;border:1px solid #cce5eb;border-radius:18px;background:#fff;box-shadow:0 12px 30px rgba(8,47,72,.08);text-decoration:none!important}
+.category-btn:link,.category-btn:visited{color:#123348}
+.category-btn img{width:135px;max-height:145px;object-fit:contain}
+.category-btn:hover{border-color:var(--rt-cyan);box-shadow:0 14px 35px rgba(3,155,172,.24);transform:translateY(-4px)}
+.site-footer{background:#071d2a}
+table {max-width:100%;overflow-wrap:anywhere}
+@media(max-width:640px){main{padding:16px 12px}.category-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.category-btn{width:100%;height:175px;padding:12px 5px;font-size:15px!important}.category-btn img{width:100px;max-height:105px}.site-pages-nav{gap:4px}.site-pages-nav a{padding:8px 9px}.home-main-title{margin-top:10px}.header-actions{padding:10px}}
+@media(max-width:380px){.category-btn{height:155px}.category-btn img{width:80px}.category-btn:link,.category-btn:visited{font-size:14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.category-btn{transition:none}.category-btn:hover{transform:none}}
+
+
+/* Approved homepage: seven steps, six services and partner images */
+.home-hero{max-width:1160px;margin:10px auto 28px;padding:clamp(24px,4vw,46px);border:1px solid rgba(31,206,219,.35);border-radius:26px;background:linear-gradient(120deg,rgba(5,24,39,.97),rgba(5,53,69,.92)),url("images/фон-оптимизирован.jpg") center/cover;color:#fff;box-shadow:0 18px 45px rgba(3,35,56,.15)}
+.home-eyebrow{text-transform:uppercase;letter-spacing:.13em;color:#65eaf0;font-size:.8rem;font-weight:700;text-align:center}
+.home-hero .home-main-title{margin:12px auto 16px;color:#fff}
+.home-hero .home-lead{color:#c6e4ec}
+.home-hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:25px 0 20px}
+.home-cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 19px;border:1px solid #44cad7;border-radius:12px;color:#fff!important;text-decoration:none;font-weight:700;transition:transform .2s,box-shadow .2s}
+.home-cta-primary{background:#23ccd7;color:#042934!important;border-color:#23ccd7}
+.home-cta-secondary{background:rgba(5,40,54,.5)}
+.home-cta:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(24,201,220,.25)}
+.home-hero-meta{text-align:center;color:#b6e4eb;font-size:.88rem}
+.info-section,.repair-process{max-width:1400px;margin:36px auto;padding:clamp(18px,3vw,32px);border-radius:22px}
+.repair-process{background:#edf7fc;border:1px solid #d0eaf2}
+.info-title{color:#0d3146;text-align:center;font-size:clamp(1.45rem,2.5vw,2rem);line-height:1.2}
+.repair-steps{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:13px;align-items:stretch}
+.repair-step{min-width:0;padding:19px 10px;border:1px solid #cee6f3;border-radius:16px;background:linear-gradient(180deg,#fff,#e6f5fb);box-shadow:0 6px 16px rgba(4,38,59,.06);overflow-wrap:anywhere;font-size:clamp(.75rem,.95vw,.95rem)}
+.repair-step strong{display:block;color:#11384b;line-height:1.3}
+.repair-step p{font-size:.88em;line-height:1.45}
+.repair-step:not(:last-child)::after{top:44%;right:-12px;z-index:2;color:#029eaf;font-size:21px}
+.step-icon{font-size:27px}
+.service-overview{background:#f1f8fa;border:1px solid #d8ebef}
+.services-layout{display:grid;grid-template-columns:minmax(0,1fr) 235px;gap:24px;align-items:start}
+.service-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.service-card{min-width:0;margin:0;padding:22px 20px;border:1px solid #d0e7ec;border-left:4px solid #12bec9;border-radius:16px;background:#fff;color:#183748;box-shadow:0 7px 18px rgba(7,37,57,.07);line-height:1.55}
+.service-card h4{margin:0 0 14px;font-size:clamp(1.05rem,1.35vw,1.2rem);color:#0c394a;line-height:1.3}
+.service-card ul{padding-left:20px;margin-bottom:0}
+.service-card li{margin-bottom:7px}
+.delivery-partners{position:static;transform:none!important;align-self:start;width:100%;padding:20px 12px;background:linear-gradient(180deg,#082333,#0d4555);border:1px solid rgba(39,217,227,.45);border-radius:18px;box-shadow:0 10px 26px rgba(6,43,59,.16);color:#fff}
+.delivery-partners h3{margin:0 0 10px;color:#bdfaff;font-size:1.15rem}
+.delivery-description{color:#d4e9ed!important;font-size:.87rem!important;font-weight:400!important;line-height:1.5}
+.delivery-logos{display:flex;flex-direction:column;gap:10px;margin:17px 0}
+.delivery-logos img{width:100%;height:83px;padding:10px;border-radius:12px;background:#fff;object-fit:contain}
+.delivery-partners .delivery-tagline{color:#80f2f2;font-size:1rem}
+.delivery-contact{display:block;margin:16px 0 0;padding:11px 8px;border:1px solid #36d9df;border-radius:9px;color:#fff;text-decoration:none;font-weight:700;font-size:.88rem}
+.footer-social a{color:#a5f5fc}
+@media(max-width:1150px){.repair-steps{grid-template-columns:repeat(4,minmax(0,1fr))}.repair-step:not(:last-child)::after{display:none}.service-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:820px){.services-layout{grid-template-columns:minmax(0,1fr)}.delivery-partners{max-width:none}.delivery-logos{flex-direction:row}.delivery-logos img{width:calc((100% - 20px)/3);height:85px}.repair-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.home-hero{padding:22px 16px}.home-hero-actions{flex-direction:column}.home-cta{width:100%}.repair-steps{grid-template-columns:minmax(0,1fr)}.repair-step{padding:18px 16px}.service-cards{grid-template-columns:minmax(0,1fr)}.service-card{padding:18px}.delivery-logos img{height:68px;padding:6px}.info-section,.repair-process{margin:22px auto;padding:17px 12px}.home-hero-meta{line-height:1.6}}
+@media(prefers-reduced-motion:reduce){.home-cta{transition:none}.home-cta:hover{transform:none}}
