@@ -380,3 +380,46 @@ document.addEventListener("keydown", event => {
     if (document.getElementById("question-modal")) closeQuestion();
   }
 });
+
+// Shared social links on every page that loads script.js.
+function mountSocialLinks() {
+  if (document.querySelector(".social-links-rail")) return;
+
+  const profiles = [
+    {
+      name: "Facebook",
+      className: "facebook",
+      url: "https://www.facebook.com/profile.php?id=61595621093680",
+      icon: '<path fill="currentColor" d="M13.8 22v-8.7h2.9l.4-3.4h-3.3V7.7c0-1 .3-1.7 1.7-1.7h1.8V3a24 24 0 0 0-2.7-.1c-2.7 0-4.6 1.7-4.6 4.7v2.3H7v3.4h3V22z"/>'
+    },
+    {
+      name: "Instagram",
+      className: "instagram",
+      url: "https://www.instagram.com/remtexnik.dp/",
+      icon: '<rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>'
+    }
+  ].filter(profile => profile.url);
+
+  const rail = document.createElement("nav");
+  rail.className = "social-links-rail";
+  rail.setAttribute("aria-label", "RemTexNik у соціальних мережах");
+
+  profiles.forEach(profile => {
+    const link = document.createElement("a");
+    link.className = `social-links-rail__link social-links-rail__link--${profile.className}`;
+    link.href = profile.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.setAttribute("aria-label", `RemTexNik у ${profile.name} (нова вкладка)`);
+    link.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${profile.icon}</svg>`;
+    const label = document.createElement("span");
+    label.className = "social-links-rail__label";
+    label.textContent = profile.name;
+    link.append(label);
+    rail.append(link);
+  });
+
+  document.body.append(rail);
+}
+
+mountSocialLinks();
