@@ -181,6 +181,7 @@ async function readReviewsFile() {
 
 async function handleReviews(request, response) {
   if (request.method === "GET") {
+    response.setHeader("X-Reviews-Writable", reviewsWritable ? "true" : "false");
     try {
       const reviews = await withReviewsLock(readReviewsFile);
       const publishedReviews = reviews
