@@ -4,7 +4,8 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 
 const publicRoot = __dirname;
-const reviewsFile = path.join(__dirname, "reviews.json");
+const reviewsFile = process.env.REVIEWS_FILE || path.join(__dirname, "reviews.json");
+const reviewsWritable = Boolean(process.env.REVIEWS_FILE);
 let reviewsQueue = Promise.resolve();
 const port = Number(process.env.PORT || 3000);
 try {
@@ -269,6 +270,9 @@ async function serveStatic(urlPath, response) {
     relativePath.startsWith("..") ||
     path.isAbsolute(relativePath) ||
     relativePath === "server.js" ||
+    relativePath === "reviews.json" ||
+    relativePath === "package.json" ||
+    relativePath === ".env" ||
     !contentTypes[extension]
   ) {
     response.writeHead(404);
@@ -294,6 +298,18 @@ async function serveStatic(urlPath, response) {
 
 const server = http.createServer(async (request, response) => {
   const requestUrl = new URL(request.url, "http://localhost");
+  response.setHeader("X-Content-Type-Options", "nosniff");
+  response.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+  response.setHeader("X-Frame-Options", "SAMEORIGIN");
+  if (requestUrl.pathname === "/blog.html") {
+    response.writeHead(301, { Location: "/" });
+    response.end();
+    return;
+  }
+  if (requestUrl.pathname === "/health") {
+    sendJson(response, 200, { ok: true });
+    return;
+  }
   if (requestUrl.pathname === "/index.html") {
     response.writeHead(301, { Location: "/golovna" });
     response.end();
