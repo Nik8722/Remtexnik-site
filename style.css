@@ -1563,3 +1563,76 @@ table {max-width:100%;overflow-wrap:anywhere}
 .contact-form-message{flex:0 0 100%;margin:5px 0;color:#294659;text-align:center;line-height:1.5;font-size:.9rem}
 .contact-form-message:empty{display:none}
 .contact-form-message a{color:#0069ae;text-decoration:underline}
+
+/* Fixed social links stay below dialogs and clear of the callback widget. */
+.social-links-rail {
+    position: fixed;
+    z-index: 8000;
+    top: 50%;
+    right: max(18px, env(safe-area-inset-right));
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transform: translateY(-50%);
+}
+
+.social-links-rail__link {
+    position: relative;
+    display: grid;
+    box-sizing: border-box;
+    width: 54px;
+    height: 54px;
+    padding: 14px;
+    place-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 5px 18px rgba(7, 22, 34, 0.25);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.social-links-rail__link:visited { color: #fff; }
+.social-links-rail__link--facebook { background: linear-gradient(145deg, #2993ff, #1252c5); }
+.social-links-rail__link--instagram { background: linear-gradient(35deg, #f5aa39, #dc2858 43%, #833ac5 78%, #515bd4); }
+.social-links-rail__link svg { display: block; width: 24px; height: 24px; }
+.social-links-rail__link:hover { transform: translateX(-4px); box-shadow: 0 7px 24px rgba(7, 22, 34, 0.36); }
+.social-links-rail__link:focus-visible { outline: 3px solid #00cddd; outline-offset: 4px; }
+
+.social-links-rail__label {
+    position: absolute;
+    right: calc(100% + 12px);
+    top: 50%;
+    padding: 7px 12px;
+    border-radius: 8px;
+    background: #102a38;
+    color: #fff;
+    font: 600 13px/1.4 Arial, sans-serif;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(5px, -50%);
+    transition: opacity 180ms ease, transform 180ms ease;
+}
+.social-links-rail__link:hover .social-links-rail__label,
+.social-links-rail__link:focus-visible .social-links-rail__label {
+    opacity: 1;
+    transform: translate(0, -50%);
+}
+
+@media (max-width: 640px) {
+    .social-links-rail {
+        top: auto;
+        right: max(12px, env(safe-area-inset-right));
+        bottom: calc(100px + env(safe-area-inset-bottom));
+        gap: 10px;
+        transform: none;
+    }
+    .social-links-rail__link { width: 46px; height: 46px; padding: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .social-links-rail__link, .social-links-rail__label { transition: none; }
+    .social-links-rail__link:hover { transform: none; }
+}
