@@ -1492,3 +1492,29 @@ main .reviews-heading h2::after {
         min-height: 0;
     }
 }
+
+/* RemTexNik • finishing polish, accessible dark/cyan identity */
+:root { color-scheme: light; --rt-navy:#071d2a; --rt-cyan:#16ccd5; }
+*, *::before, *::after {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {overflow-x:hidden;color:#142c3b;line-height:1.55}
+img {max-width:100%}
+a, button { -webkit-tap-highlight-color:transparent }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {outline:3px solid #0bc6d9;outline-offset:3px}
+.site-header {background-color:#071d2a;background-image:linear-gradient(110deg,rgba(3,17,30,.84),rgba(3,29,44,.6)),url("images/фон-оптимизирован.jpg")}
+.header-contact-details,.header-actions,.site-pages-nav {border:1px solid rgba(33,216,228,.32);border-radius:14px;background:rgba(2,17,27,.88);box-shadow:0 10px 28px rgba(0,0,0,.18)}
+.site-pages-nav a,.header-action-link,.header-actions a.header-action-link,.header-contact-details a{color:#b8f9ff}
+.site-pages-nav a:hover,.site-pages-nav a:focus-visible,.site-pages-nav a[aria-current="page"] {background:rgba(24,208,221,.2);color:#fff}
+main {background:linear-gradient(180deg,#f0f8fb 0%,#fff 50%,#eef6f9 100%)}
+.home-main-title {max-width:1000px;margin:20px auto 8px;text-align:center;color:#09283c;font-size:clamp(1.65rem,4vw,2.7rem);line-height:1.2}
+.home-lead {max-width:850px;margin:0 auto 28px;text-align:center;color:#36566a;font-size:clamp(1rem,2vw,1.17rem)}
+.category-buttons {max-width:1160px;gap:16px;margin:26px auto 40px}
+.category-btn {margin:0;min-width:0;width:clamp(205px,27vw,270px);height:230px;border:1px solid #cce5eb;border-radius:18px;background:#fff;box-shadow:0 12px 30px rgba(8,47,72,.08);text-decoration:none!important}
+.category-btn:link,.category-btn:visited{color:#123348}
+.category-btn img{width:135px;max-height:145px;object-fit:contain}
+.category-btn:hover{border-color:var(--rt-cyan);box-shadow:0 14px 35px rgba(3,155,172,.24);transform:translateY(-4px)}
+.site-footer{background:#071d2a}
+table {max-width:100%;overflow-wrap:anywhere}
+@media(max-width:640px){main{padding:16px 12px}.category-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.category-btn{width:100%;height:175px;padding:12px 5px;font-size:15px!important}.category-btn img{width:100px;max-height:105px}.site-pages-nav{gap:4px}.site-pages-nav a{padding:8px 9px}.home-main-title{margin-top:10px}.header-actions{padding:10px}}
+@media(max-width:380px){.category-btn{height:155px}.category-btn img{width:80px}.category-btn:link,.category-btn:visited{font-size:14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.category-btn{transition:none}.category-btn:hover{transform:none}}
