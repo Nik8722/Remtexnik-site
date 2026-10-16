@@ -334,7 +334,7 @@
   <div class="modal-content callback-modal-content">
     <h3>Залиште свій номер</h3>
     <form onsubmit="sendPhone(event)">
-      <input type="tel" id="phoneInput" value="+38 (0" autocomplete="tel" inputmode="numeric" required>
+      <label class="visually-hidden" for="phoneInput">Номер телефону</label><input type="tel" id="phoneInput" value="+38 (0" autocomplete="tel" inputmode="numeric" required><p id="contact-message" class="contact-form-message" role="status" aria-live="polite"></p>
       <button type="submit">Відправити</button>
       <button type="button" onclick="closeContact()">Закрити</button>
     </form>
