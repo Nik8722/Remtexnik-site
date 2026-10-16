@@ -6,6 +6,7 @@ const path = require("node:path");
 const publicRoot = __dirname;
 const reviewsFile = process.env.REVIEWS_FILE || path.join(__dirname, "reviews.json");
 const reviewsWritable = Boolean(process.env.REVIEWS_FILE);
+const reviewsAccepting = reviewsWritable || Boolean(process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID);
 let reviewsQueue = Promise.resolve();
 const port = Number(process.env.PORT || 3000);
 try {
@@ -181,7 +182,7 @@ async function readReviewsFile() {
 
 async function handleReviews(request, response) {
   if (request.method === "GET") {
-    response.setHeader("X-Reviews-Writable", reviewsWritable ? "true" : "false");
+    response.setHeader("X-Reviews-Writable", reviewsAccepting ? "true" : "false");
     try {
       const reviews = await withReviewsLock(readReviewsFile);
       const publishedReviews = reviews
@@ -232,11 +233,25 @@ async function handleReviews(request, response) {
       status: "pending"
     };
 
-    await withReviewsLock(async () => {
-      const reviews = await readReviewsFile();
-      reviews.unshift(review);
-      await fs.writeFile(reviewsFile, JSON.stringify(reviews, null, 2) + "\n", "utf8");
-    });
+    if (reviewsWritable) {
+      await withReviewsLock(async () => {
+        const reviews = await readReviewsFile();
+        reviews.unshift(review);
+        await fs.writeFile(reviewsFile, JSON.stringify(reviews, null, 2) + "\n", "utf8");
+      });
+    } else if (botToken && chatId) {
+      const tgResponse = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: chatId,
+          text: `Відгук на модерацію\nІм'я: ${name}\nОцінка: ${rating}/5\nТекст: ${text}\nДата: ${review.date}` })
+      });
+      const tgResult = await tgResponse.json();
+      if (!tgResponse.ok || !tgResult.ok) throw new Error("Telegram review delivery failed");
+    } else {
+      sendJson(response, 503, { error: "Прийом відгуків тимчасово недоступний." });
+      return;
+    }
 
     sendJson(response, 202, { ok: true });
   } catch (error) {
