@@ -291,6 +291,11 @@ if (reviewsList) {
       }
 
       const reviews = await response.json();
+      if (response.headers.get("X-Reviews-Writable") === "false") {
+        formToggle.hidden = true;
+        reviewForm.hidden = true;
+        message.textContent = "Додавання відгуків тимчасово недоступне. Для зв’язку скористайтеся телефоном або Instagram.";
+      }
 
       if (!Array.isArray(reviews)) {
         throw new Error("Сервер повернув некоректний список відгуків.");
