@@ -18,6 +18,7 @@ try {
 }
 const botToken = process.env.TELEGRAM_BOT_TOKEN;
 const chatId = process.env.TELEGRAM_CHAT_ID;
+const moderation = require("./review-moderation");
 const contentTypes = {
   ".css": "text/css; charset=utf-8",
   ".html": "text/html; charset=utf-8",
@@ -184,7 +185,7 @@ async function handleReviews(request, response) {
   if (request.method === "GET") {
     response.setHeader("X-Reviews-Writable", reviewsAccepting ? "true" : "false");
     try {
-      const reviews = await withReviewsLock(readReviewsFile);
+      const reviews = moderation.enabled ? await moderation.publishedReviews() : await withReviewsLock(readReviewsFile);
       const publishedReviews = reviews
         .filter(review => review.status === "approved")
         .map(({ id, name, text, date, rating }) => ({ id, name, text, date, rating }));
@@ -233,7 +234,9 @@ async function handleReviews(request, response) {
       status: "pending"
     };
 
-    if (reviewsWritable) {
+    if (moderation.enabled) {
+      await moderation.sendForApproval(review, chatId);
+    } else if (reviewsWritable) {
       await withReviewsLock(async () => {
         const reviews = await readReviewsFile();
         reviews.unshift(review);
@@ -286,6 +289,7 @@ async function serveStatic(urlPath, response) {
     relativePath.startsWith("..") ||
     path.isAbsolute(relativePath) ||
     relativePath === "server.js" ||
+    relativePath === "review-moderation.js" ||
     relativePath === "reviews.json" ||
     relativePath === "package.json" ||
     relativePath === ".env" ||
@@ -332,6 +336,25 @@ const server = http.createServer(async (request, response) => {
     return;
   }
 
+  if (requestUrl.pathname === "/api/telegram-review-webhook") {
+    if (request.method !== "POST") {
+      sendJson(response, 405, { error: "Method not allowed" });
+      return;
+    }
+    if (!moderation.enabled || !moderation.authenticated(request)) {
+      sendJson(response, 403, { error: "Forbidden" });
+      return;
+    }
+    try {
+      const update = await readJson(request);
+      await moderation.processUpdate(update);
+      sendJson(response, 200, { ok: true });
+    } catch (error) {
+      console.error("Telegram review moderation failed:", error);
+      sendJson(response, 500, { error: "Could not moderate review" });
+    }
+    return;
+  }
   if (requestUrl.pathname === "/api/reviews") {
     await handleReviews(request, response);
     return;
@@ -384,4 +407,7 @@ const server = http.createServer(async (request, response) => {
 
 server.listen(port, "0.0.0.0", () => {
   console.log(`Site available at http://localhost:${port}`);
+  if (moderation.enabled) moderation.registerWebhook().then(() => {
+    console.log("Telegram review approval buttons enabled");
+  }).catch(error => console.error("Could not register Telegram review webhook:", error));
 });
