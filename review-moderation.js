@@ -1,14 +1,16 @@
 // Telegram approval buttons and durable public reviews in a separate GitHub branch.
 // No pending review is stored in the public repository.
-const { timingSafeEqual } = require("node:crypto");
+const { timingSafeEqual, createHash } = require("node:crypto");
 
 const repo = "Nik8722/Remtexnik-site";
 const reviewsBranch = "reviews-data";
 const githubToken = process.env.GH_REVIEWS_TOKEN;
 const botToken = process.env.TELEGRAM_BOT_TOKEN;
-const adminUserId = String(process.env.TELEGRAM_ADMIN_USER_ID || "");
-const webhookSecret = process.env.TELEGRAM_WEBHOOK_SECRET;
-const siteUrl = (process.env.SITE_PUBLIC_URL || "").replace(/\/$/, "");
+// For a private chat the Telegram chat ID is the owner user ID.
+const adminUserId = String(process.env.TELEGRAM_ADMIN_USER_ID || (/^\d+$/.test(process.env.TELEGRAM_CHAT_ID || "") ? process.env.TELEGRAM_CHAT_ID : ""));
+// Use a deterministic secret derived from the existing private bot token.
+const webhookSecret = botToken ? createHash("sha256").update(botToken + ":review-webhook-v1").digest("hex") : "";
+const siteUrl = (process.env.SITE_PUBLIC_URL || "https://remtexnik-site.onrender.com").replace(/\/$/, "");
 const enabled = Boolean(githubToken && botToken && adminUserId && webhookSecret && siteUrl);
 
 async function telegram(method, payload) {
