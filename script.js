@@ -99,7 +99,8 @@ async function sendPhone(event) {
   const digits = document.getElementById("phoneInput").value.replace(/\D/g, "");
   const phone = digits;
   if (!/^380\d{9}$/.test(phone)) {
-    alert("Введіть український номер у форматі +38 (0__) ___ __ __.");
+    const message = document.getElementById("contact-message");
+    if (message) message.textContent = "Введіть український номер у форматі +38 (0__) ___ __ __.";
     return;
   }
   const submitButton = event.currentTarget.querySelector('button[type="submit"]');
@@ -123,7 +124,8 @@ async function sendPhone(event) {
     closeContact();
   } catch (error) {
     console.error("Failed to send callback request:", error);
-    alert("Не вдалося надіслати заявку. Будь ласка, зателефонуйте: +38 (095) 493 26 01.");
+    const message = document.getElementById("contact-message");
+    if (message) message.innerHTML = 'Немає підтвердження надсилання. <a href="tel:+380954932601">Зателефонуйте нам</a> або напишіть в <a href="https://www.instagram.com/remtexnik.dp/">Instagram</a>.';
   } finally {
     submitButton.disabled = false;
   }
@@ -302,6 +304,9 @@ if (reviewsList) {
       }
 
       reviewsList.replaceChildren(...reviews.map(createReviewCard));
+      if (!reviews.length && response.headers.get("X-Reviews-Writable") !== "false") {
+        message.textContent = "Поки немає опублікованих відгуків. Напишіть перший — він з’явиться після модерації.";
+      }
       updateReviewsVisibility();
     } catch (error) {
       console.error("Ошибка загрузки отзывов:", error);
@@ -365,3 +370,13 @@ if (reviewsList) {
 
   loadReviews();
 }
+
+// Deep links allow callback and question dialogs from other pages.
+if (location.hash === "#contact" && document.getElementById("contact-modal")) openContact();
+if (location.hash === "#question" && document.getElementById("question-modal")) openQuestion();
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    if (document.getElementById("contact-modal")) closeContact();
+    if (document.getElementById("question-modal")) closeQuestion();
+  }
+});
