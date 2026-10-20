@@ -350,10 +350,6 @@ table.monitor-price-table {
     background: #fff;
 }
 
-.monitor-price-table tbody tr:hover {
-    background: #c7daf4;
-}
-
 .monitor-price-table tbody th {
     text-align: left;
     font-weight: 600;
@@ -718,6 +714,24 @@ main h2::after {
     left: 28px;
 }
 
+.callback-widget::before {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 0;
+    padding: 9px 13px;
+    border: 1px solid rgba(245, 196, 0, 0.7);
+    border-radius: 20px;
+    background: linear-gradient(135deg, #102b37, #071316);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    content: "Консультація — безкоштовна";
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
 .callback-widget-trigger {
     display: grid;
     width: 66px;
@@ -745,7 +759,7 @@ main h2::after {
 
 .callback-widget-panel {
     position: absolute;
-    bottom: 0;
+    bottom: calc(100% + 10px);
     left: 0;
     display: flex;
     align-items: center;
@@ -1737,6 +1751,9 @@ main li,
     margin: 0 0 12px;
     text-shadow: none;
 }
+#delivery-title {
+    color: #3b9eaf;
+}
 .delivery-description {
     margin: 0 0 12px !important;
     color: #40536a;
@@ -1786,4 +1803,8 @@ main li,
 .delivery-partners .info-title::before,
 .delivery-partners .info-title::after {
     content: none;
+}
+
+body :not(input):not(textarea):not(select):not([contenteditable="true"]) {
+    cursor: default !important;
 }

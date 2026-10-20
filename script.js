@@ -204,7 +204,7 @@ if (callbackWidgetTrigger && callbackWidgetPanel && callbackWidgetClose) {
   let callbackAlreadyShown = false;
   try { callbackAlreadyShown = sessionStorage.getItem("remtexnik-callback-seen") === "1"; } catch {}
   if (!callbackAlreadyShown) {
-    callbackPopupTimer = window.setTimeout(() => showCallbackPanel(false), 45000);
+    callbackPopupTimer = window.setTimeout(() => showCallbackPanel(false), 25000);
   }
 }
 
