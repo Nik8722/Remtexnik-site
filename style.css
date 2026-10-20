@@ -1782,3 +1782,8 @@ main li,
     .delivery-logos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
     .delivery-logos img { height: 76px; padding: 5px; }
 }
+
+.delivery-partners .info-title::before,
+.delivery-partners .info-title::after {
+    content: none;
+}
