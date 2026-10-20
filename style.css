@@ -1686,3 +1686,99 @@ table {max-width:100%;overflow-wrap:anywhere}
     .social-links-rail__link, .social-links-rail__label { transition: none; }
     .social-links-rail__link:hover { transform: none; }
 }
+
+
+/* Єдина шкала типографіки для основних сторінок */
+body {
+    font-size: 16px;
+    line-height: 1.55;
+}
+main h2,
+.info-title,
+.reviews-heading h2 {
+    font-size: clamp(24px, 2vw, 28px);
+    line-height: 1.25;
+}
+.service-card h4,
+.delivery-partners h3 {
+    font-size: 18px;
+    line-height: 1.35;
+}
+main p,
+main li,
+.service-card,
+.delivery-partners,
+.callback-widget-panel p {
+    font-size: 16px;
+}
+
+/* Горизонтальний блок доставки */
+.services-layout {
+    display: block;
+}
+.delivery-section {
+    box-sizing: border-box;
+    padding: 24px;
+    border: 1px solid #d9e5ee;
+    border-radius: 16px;
+    background: linear-gradient(115deg, #f2f8fc, #fff);
+}
+.delivery-partners {
+    display: grid;
+    grid-template-columns: minmax(240px, .9fr) minmax(0, 1.4fr);
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    text-align: left;
+    transform: none;
+}
+.delivery-partners .info-title {
+    justify-content: flex-start;
+    margin: 0 0 12px;
+    text-shadow: none;
+}
+.delivery-description {
+    margin: 0 0 12px !important;
+    color: #40536a;
+    font-weight: 400 !important;
+}
+.delivery-tagline {
+    margin: 0 0 14px !important;
+    color: #183449;
+}
+.delivery-contact {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 0 18px;
+    border-radius: 8px;
+    background: #087dcc;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.delivery-contact:hover {
+    background: #0566a8;
+}
+.delivery-logos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    gap: 18px;
+}
+.delivery-logos img {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    border: 1px solid #e0e8ee;
+    border-radius: 12px;
+    background: #fff;
+    object-fit: contain;
+}
+@media (max-width: 700px) {
+    .delivery-section { padding: 20px 16px; }
+    .delivery-partners { grid-template-columns: 1fr; gap: 18px; }
+    .delivery-logos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .delivery-logos img { height: 76px; padding: 5px; }
+}
