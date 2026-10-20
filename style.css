@@ -455,23 +455,43 @@ table.monitor-price-table {
     height: auto;
 }
 
-.top-banner {
-    position: relative;
+.brand-title {
     flex: 1 1 auto;
     min-width: 0;
-    height: clamp(220px, 28vw, 340px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 28px 0;
+    text-align: center;
 }
-/* ИЗОБРАЖЕНИЕ БАННЕРА: размер и способ вписывания в блок */
-.top-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
+.brand-title-caption {
     display: block;
+    margin-bottom: 10px;
+    color: #e0edf3;
+    font-size: clamp(15px, 1.6vw, 23px);
+    font-weight: 500;
+    letter-spacing: .12em;
 }
+.brand-title-name {
+    display: block;
+    color: #f4fbff;
+    font-size: clamp(30px, 4.4vw, 68px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -.045em;
+    white-space: nowrap;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, .3);
+}
+.brand-title-accent {
+    color: #5eead4;
+}
+.brand-title::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 3px;
+    margin: 18px auto 0;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #38bdf8, #5eead4);
+}
+
 
 @media (max-width: 1000px) {
     .site-header {
@@ -493,9 +513,15 @@ table.monitor-price-table {
         padding: 14px 16px;
     }
 
-    .top-banner {
-        grid-row: 1;
-        height: clamp(150px, 55vw, 240px);
+    .brand-title {
+        padding: 18px 0;
+    }
+    .brand-title-caption {
+        font-size: clamp(12px, 3.5vw, 18px);
+        letter-spacing: .08em;
+    }
+    .brand-title-name {
+        font-size: clamp(28px, 8vw, 48px);
     }
 
     .header-branding {
