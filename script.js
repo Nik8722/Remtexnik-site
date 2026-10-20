@@ -180,17 +180,32 @@ const callbackWidgetPanel = document.getElementById("callback-widget-panel");
 const callbackWidgetClose = document.getElementById("callback-widget-close");
 
 if (callbackWidgetTrigger && callbackWidgetPanel && callbackWidgetClose) {
-  callbackWidgetTrigger.addEventListener("click", () => {
+  let callbackPopupTimer;
+
+  const showCallbackPanel = (focusInput = false) => {
     callbackWidgetPanel.hidden = false;
     callbackWidgetTrigger.setAttribute("aria-expanded", "true");
-    focusPhoneInput(document.getElementById("callback-widget-phone"));
+    try { sessionStorage.setItem("remtexnik-callback-seen", "1"); } catch {}
+    if (focusInput) focusPhoneInput(document.getElementById("callback-widget-phone"));
+  };
+
+  callbackWidgetTrigger.addEventListener("click", () => {
+    window.clearTimeout(callbackPopupTimer);
+    showCallbackPanel(true);
   });
 
   callbackWidgetClose.addEventListener("click", () => {
+    window.clearTimeout(callbackPopupTimer);
     callbackWidgetPanel.hidden = true;
     callbackWidgetTrigger.setAttribute("aria-expanded", "false");
     callbackWidgetTrigger.focus();
   });
+
+  let callbackAlreadyShown = false;
+  try { callbackAlreadyShown = sessionStorage.getItem("remtexnik-callback-seen") === "1"; } catch {}
+  if (!callbackAlreadyShown) {
+    callbackPopupTimer = window.setTimeout(() => showCallbackPanel(false), 45000);
+  }
 }
 
 

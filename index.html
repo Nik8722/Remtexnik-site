@@ -227,60 +227,27 @@
 
           </div>
 
-          <aside class="delivery-partners" aria-label="Доставка техніки з інших міст"><h3>Доставка техніки</h3><p class="delivery-description">Можна звернутися з іншого міста. Перед відправленням пристрою узгодьте деталі з нами телефоном.</p>
-            <div class="delivery-logos">
-              <!-- ЛОГОТИП MEEST: замените путь в src, если используете другое изображение -->
-              <img src="images/мист.jpg" alt="Meest" loading="lazy" decoding="async">
-
-              <!-- ЛОГОТИП УКРПОШТИ: замените путь в src, если используете другое изображение -->
-              <img src="images/укр почта.png" alt="Укрпошта" loading="lazy" decoding="async">
-
-              <!-- ЛОГОТИП НОВОЇ ПОШТИ: замените путь в src, если используете другое изображение -->
-              <img src="images/новая почта.png" alt="Нова пошта" loading="lazy" decoding="async">
-            </div>
-            <p class="delivery-tagline">Відправляй із свого міста</p><a class="delivery-contact" href="tel:+380954932601">Узгодити відправлення →</a>
-          </aside>
+          
           </div>
         </section>
 
-        <section class="info-section">
-    <h3 class="info-title">Поширені несправності</h3>
+        <section class="info-section delivery-section" aria-labelledby="delivery-title">
+    <div class="delivery-partners">
+        <div class="delivery-copy">
+            <h2 class="info-title" id="delivery-title">Доставка техніки</h2>
+            <p class="delivery-description">Можна звернутися з іншого міста. Перед відправленням пристрою узгодьте деталі з нами телефоном.</p>
+            <p class="delivery-tagline">Відправляй із свого міста</p>
+            <a class="delivery-contact" href="tel:+380954932601">Узгодити відправлення →</a>
+        </div>
+        <div class="delivery-logos" aria-label="Служби доставки">
+            <img src="images/мист.jpg" alt="Meest" loading="lazy" decoding="async">
+            <img src="images/укр почта.png" alt="Укрпошта" loading="lazy" decoding="async">
+            <img src="images/новая почта.png" alt="Нова пошта" loading="lazy" decoding="async">
+        </div>
+    </div>
+</section>
 
-    <ul class="problem-list">
-        <li>
-            <strong>Комп’ютер чи ноутбук не вмикається.</strong>
-            Натискаєте кнопку живлення, а у відповідь – тиша? Це може бути що завгодно: від блока живлення до материнської плати. Ми знайдемо причину.
-        </li>
-        <li>
-            <strong>ПК чи ноутбук повільно працює або зависає.</strong>
-            Можуть допомогти чистка системи, збільшення пам’яті або заміна накопичувача після модернізації.
-        </li>
-        <li>
-            <strong>З’являється синій або чорний екран.</strong>
-            Так званий "екран смерті" (BSOD) або просто чорний екран вказують на критичні помилки в апаратній або програмній частині.
-        </li>
-        <li>
-            <strong>Комп’ютер чи ноутбук перегрівається чи шумить.</strong>
-            Часто причина — пил або несправність системи охолодження.
-        </li>
-    </ul>
-        </section>
-
-        <section class="info-section more-about-repair">
-    <h3 class="info-title">Як відбувається ремонт</h3>
-
-    <ol class="repair-details">
-        <li><strong>Заявка.</strong> Залишаєте заявку або приносите пристрій до сервісного центру.</li>
-        <li><strong>Діагностика.</strong> Визначаємо причину несправності.</li>
-        <li><strong>Узгодження.</strong> Повідомляємо вартість та строки ремонту.</li>
-        <li><strong>Ремонт та перевірка.</strong> Виконуємо роботи та тестуємо пристрій.</li>
-    </ol>
-
-    <p>Після ремонту ви отримуєте справний пристрій та інформацію про виконані роботи.</p>
-        </section>
-
-
-        <section class="reviews-section" id="reviews">
+<section class="reviews-section" id="reviews">
     <div class="reviews-heading">
         <h2>ВІДГУКИ КЛІЄНТІВ</h2>
         <button class="reviews-add" id="review-form-toggle" type="button">
@@ -368,10 +335,10 @@
     <form class="callback-widget-panel" id="callback-widget-panel" onsubmit="sendWidgetCallback(event)" hidden>
         <button class="callback-widget-close" id="callback-widget-close" type="button"
             aria-label="Закрити форму дзвінка">×</button>
-        <p>Передзвонимо Вам<br>найближчим часом!</p>
+        <p><strong>Безкоштовна консультація</strong><br>Замовте зворотний дзвінок</p>
         <label class="visually-hidden" for="callback-widget-phone">Номер телефону</label>
         <input id="callback-widget-phone" type="tel" value="+38 (0" autocomplete="tel" inputmode="numeric" required>
-        <button class="callback-widget-submit" type="submit">Передзвоніть!</button>
+        <button class="callback-widget-submit" type="submit">Замовити дзвінок</button>
         <span class="callback-widget-message" id="callback-widget-message" role="status" aria-live="polite"></span>
     </form>
 </div>
