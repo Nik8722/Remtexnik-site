@@ -10,10 +10,10 @@ body.rt-prices .monitor-price-table th,body.rt-prices .monitor-price-table td{bo
 body.rt-prices .monitor-price-table thead th{background:#12374b;color:#b3f7fa;text-transform:uppercase;font-size:12px;letter-spacing:.035em}
 body.rt-prices .monitor-price-table tbody tr:nth-child(odd){background:#0e2a3b}
 body.rt-prices .monitor-price-table tbody tr:nth-child(even){background:#0a2130}
-body.rt-prices .monitor-price-table tbody th{color:#f4ffff;font-weight:600;width:57%}
+body.rt-prices .monitor-price-table tbody th{color:#f4ffff;font-weight:400;width:57%}
 body.rt-prices .monitor-price-table tbody td:nth-child(2){color:#d2fdff;width:28%}
 body.rt-prices .monitor-price-table tbody td:nth-child(3){color:#bfd8e1;width:15%}
-body.rt-prices .monitor-price-table strong{font-size:15px;color:#f1ffff}
+body.rt-prices .monitor-price-table strong{font-size:15px;font-weight:400;color:#f1ffff}
 body.rt-prices .monitor-price-table small{display:block;color:#b4d3da;font-size:12px;margin-top:5px}
 body.rt-prices .monitor-price-notes{background:#103146;color:#e0f9ff;border:1px solid #2a6a82;border-left:4px solid #24dce7;border-radius:13px;margin-top:27px}
 body.rt-prices .monitor-price-notes h2{color:#f4ffff}
