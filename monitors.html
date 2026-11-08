@@ -7,8 +7,9 @@
     <meta name="description" content="Послуги, орієнтовні ціни та строки ремонту моніторів у сервісному центрі RemTexNik.">
     <link rel="icon" type="image/png" href="images/remtexnik-оптимізований.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pricing-2026.css">
 </head>
-<body>
+<body class="rt-prices">
     <header class="site-header">
         <section class="header-contact-details" aria-label="Контакти сервісного центру">
             <h2>Контакти</h2>
@@ -61,35 +62,25 @@
     <main>
         <section class="monitor-price-page" aria-labelledby="monitor-price-title">
             <div class="monitor-price-card">
-                <h1 id="monitor-price-title"><span aria-hidden="true">🖥️</span> Ремонт моніторів</h1>
+                <h1 id="monitor-price-title"><span aria-hidden="true">🖥️</span> Ремонт моніторів</h1><div class="rt-info"><div><strong>✓ Діагностика безкоштовна при виконанні ремонту</strong><p>Ціни наведено тільки за роботу. Деталі, комплектуючі та спеціальні матеріали оплачуються окремо. У разі відмови від ремонту діагностика оплачується за прайсом після погодження.</p></div><a href="packages.html">Комплексні послуги →</a></div>
 
                 <div class="monitor-table-scroll" tabindex="0" aria-label="Прайс-лист ремонту моніторів, прокручуйте таблицю горизонтально на малому екрані">
                     <table class="monitor-price-table">
                         <thead>
                             <tr>
                                 <th scope="col"><span aria-hidden="true">🔧</span> Послуга</th>
-                                <th scope="col"><span aria-hidden="true">💸</span> Вартість (грн)</th>
+                                <th scope="col">Ціна за роботу</th>
                                 <th scope="col"><span aria-hidden="true">⏱️</span> Термін виконання</th>
-                            </tr>
+                            <th scope="col">Статус</th></tr>
                         </thead>
-                        <tbody>
-                            <tr><th scope="row">Діагностика</th><td>300–700</td><td>1 день</td></tr>
-                            <tr><th scope="row">Заміна LED-підсвітки</th><td>600–2000</td><td>1–2 дні</td></tr>
-                            <tr><th scope="row">Заміна матриці</th><td>1000–4000+</td><td>2–4 дні</td></tr>
-                            <tr><th scope="row">Ремонт блоку живлення</th><td>500–1500</td><td>1–2 дні</td></tr>
-                            <tr><th scope="row">Ремонт плати/контролера</th><td>700–2000</td><td>2–3 дні</td></tr>
-                            <tr><th scope="row">Заміна роз’ємів HDMI/VGA/DisplayPort</th><td>400–800</td><td>1–2 дні</td></tr>
-                            <tr><th scope="row">Відновлення після залиття/перепаду напруги</th><td>1000–2500</td><td>2–4 дні</td></tr>
-                            <tr><th scope="row">Заміна інвертора/T-CON</th><td>700–1500</td><td>2–3 дні</td></tr>
-                            <tr><th scope="row">Чистка/профілактика</th><td>300–600</td><td>1 день</td></tr>
-                        </tbody>
+                        <tbody><tr class="rt-updated"><th scope="row">Базова діагностика монітора</th><td><strong>Безкоштовно при ремонті</strong><small>300–500 грн при відмові</small></td><td>1 день</td><td><span class="rt-status updated">Оновлено</span></td></tr><tr class="rt-updated"><th scope="row">Поглиблена діагностика монітора</th><td><strong>Безкоштовно при ремонті</strong><small>500–700 грн при відмові</small></td><td>1 день</td><td><span class="rt-status updated">Оновлено</span></td></tr><tr class="rt-updated"><th scope="row">Заміна LED-підсвітки (робота без деталей)</th><td><strong>600–2 000 грн</strong></td><td>1–2 дні</td><td><span class="rt-status updated">Оновлено</span></td></tr><tr><th scope="row">Заміна матриці</th><td><strong>1000–4000+ грн</strong></td><td>2–4 дні</td><td><span class="rt-status">За роботу</span></td></tr><tr><th scope="row">Ремонт блоку живлення</th><td><strong>500–1500 грн</strong></td><td>1–2 дні</td><td><span class="rt-status">За роботу</span></td></tr><tr><th scope="row">Ремонт плати/контролера</th><td><strong>700–2000 грн</strong></td><td>2–3 дні</td><td><span class="rt-status">За роботу</span></td></tr><tr><th scope="row">Заміна роз’ємів HDMI/VGA/DisplayPort</th><td><strong>400–800 грн</strong></td><td>1–2 дні</td><td><span class="rt-status">За роботу</span></td></tr><tr><th scope="row">Відновлення після залиття/перепаду напруги</th><td><strong>1000–2500 грн</strong></td><td>2–4 дні</td><td><span class="rt-status">За роботу</span></td></tr><tr><th scope="row">Заміна інвертора/T-CON</th><td><strong>700–1500 грн</strong></td><td>2–3 дні</td><td><span class="rt-status">За роботу</span></td></tr><tr><th scope="row">Чистка/профілактика</th><td><strong>300–600 грн</strong></td><td>1 день</td><td><span class="rt-status">За роботу</span></td></tr></tbody>
                     </table>
                 </div>
 
                 <aside class="monitor-price-notes" aria-labelledby="monitor-notes-title">
                     <h2 id="monitor-notes-title"><span aria-hidden="true">💡</span> Примітки</h2>
-                    <ul>
-                        <li>Ціни можуть змінюватися залежно від моделі пристрою, складності ремонту та вартості запчастин.</li>
+                    <ul><li><strong>Діагностика безкоштовна при погодженому ремонті.</strong> Якщо від ремонту відмовляються, ціна діагностики узгоджується до виконання робіт.</li><li>Усі суми за роботу; вартість деталей та матеріалів погоджується окремо.</li>
+                        <li>Ціни за роботу залежать від моделі та складності ремонту. Запчастини оплачуються окремо.</li>
                         <li>Термін виконання може змінюватися залежно від наявності запчастини та терміну її доставки.</li>
                         <li>Усі роботи можуть супроводжуватися гарантією від 3 до 12 місяців.</li>
                         <li>Деякі послуги потребують попередньої діагностики для уточнення вартості.</li>

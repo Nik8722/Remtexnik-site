@@ -1,0 +1,48 @@
+
+/* Scoped to pricing pages only; homepage visuals remain unchanged */
+body.rt-prices .monitor-price-page{max-width:1390px;margin:18px auto;padding:clamp(15px,3vw,44px);background:linear-gradient(140deg,#061525,#0b2e40,#071522);border:1px solid #265c71;border-radius:18px}
+body.rt-prices .monitor-price-card{max-width:1160px;background:#091e2d;color:#e7faff;border:1px solid #286076;border-radius:17px;padding:clamp(16px,3vw,32px);box-shadow:0 10px 28px #0005}
+body.rt-prices .monitor-price-card h1{color:#f5fdff;text-align:left;margin:0 0 20px;font-size:clamp(26px,3vw,38px)}
+body.rt-prices .monitor-price-card .device-price-section-title{color:#54e3ec;margin:30px 0 13px;text-shadow:none}
+body.rt-prices .monitor-table-scroll{background:#0b2435;border:1px solid #235269;border-radius:13px;box-shadow:none}
+body.rt-prices table.monitor-price-table{min-width:790px;color:#eafaff;font-size:14px;border-collapse:collapse}
+body.rt-prices .monitor-price-table th,body.rt-prices .monitor-price-table td{border:0;border-bottom:1px solid #1a3e50;padding:13px 15px;text-align:left;vertical-align:top;line-height:1.45}
+body.rt-prices .monitor-price-table thead th{background:#12374b;color:#b3f7fa;text-transform:uppercase;font-size:12px;letter-spacing:.035em}
+body.rt-prices .monitor-price-table tbody tr:nth-child(odd){background:#0e2a3b}
+body.rt-prices .monitor-price-table tbody tr:nth-child(even){background:#0a2130}
+body.rt-prices .monitor-price-table tbody tr.rt-updated{background:#12423f;border-left:3px solid #1ee9df}
+body.rt-prices .monitor-price-table tbody th{color:#f4ffff;font-weight:600;width:45%}
+body.rt-prices .monitor-price-table tbody td:nth-child(2){color:#d2fdff;width:29%}
+body.rt-prices .monitor-price-table tbody td:nth-child(3){color:#bfd8e1;width:13%}
+body.rt-prices .monitor-price-table tbody td:nth-child(4){width:13%}
+body.rt-prices .monitor-price-table strong{font-size:15px;color:#f1ffff}
+body.rt-prices .monitor-price-table small{display:block;color:#b4d3da;font-size:12px;margin-top:5px}
+body.rt-prices .rt-status{display:inline-block;font-size:11px;color:#b0d4de;background:#133447;border:1px solid #315e70;border-radius:6px;padding:4px 7px}
+body.rt-prices .rt-status.updated{color:#96ffdc;border-color:#2e9c76;background:#114335}
+body.rt-prices .monitor-price-notes{background:#103146;color:#e0f9ff;border:1px solid #2a6a82;border-left:4px solid #24dce7;border-radius:13px;margin-top:27px}
+body.rt-prices .monitor-price-notes h2{color:#f4ffff}
+body.rt-prices .monitor-price-notes li{margin-bottom:7px}
+body.rt-prices .pc-liquid-note{background:#123c43;color:#d9faf6;border:1px solid #1a9e98}
+body.rt-prices .rt-info{display:flex;align-items:center;justify-content:space-between;gap:18px;background:#103146;border:1px solid #26728a;border-radius:12px;padding:18px;margin-bottom:26px}
+body.rt-prices .rt-info strong{color:#a4ffde;font-size:16px}
+body.rt-prices .rt-info p{margin:5px 0 0;color:#c4e4e9;font-size:14px}
+body.rt-prices .rt-info a{white-space:nowrap;background:#1de2e9;color:#06232b;font-size:13px;font-weight:750;border-radius:9px;padding:11px 14px;text-decoration:none}
+body.rt-prices .rt-package-page{max-width:1290px;margin:20px auto;padding:clamp(16px,3vw,38px);background:linear-gradient(135deg,#061622,#0c3041,#061622);color:#ebfaff;border:1px solid #2b6e82;border-radius:17px}
+body.rt-prices .rt-package-page h1{font-size:clamp(29px,4vw,46px);color:#fff;margin:6px 0 18px}
+body.rt-prices .rt-package-page .intro{max-width:800px;color:#bddde5;font-size:17px}
+body.rt-prices .package-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:27px}
+body.rt-prices .package{padding:19px;border:1px solid #23647b;background:linear-gradient(135deg,#11354b,#0a1d30);border-radius:15px;min-width:0}
+body.rt-prices .pkgtop{display:flex;justify-content:space-between;color:#7eaebd}
+body.rt-prices .pkgtype{background:#135068;color:#c0f9ff;padding:4px 9px;border-radius:20px;font-size:11px}
+body.rt-prices .package h3{font-size:19px;color:#fff;line-height:1.25;min-height:49px}
+body.rt-prices .package .price{font-size:33px;font-weight:850;color:#29e7eb}
+body.rt-prices .package .price span{font-size:16px}
+body.rt-prices .package p{font-size:13px;color:#c6e1e8}
+body.rt-prices .package .muted{color:#a4c3ca}
+body.rt-prices .package h4{font-size:13px;color:#93ffdd;margin:18px 0 5px}
+body.rt-prices .package .conditions{font-size:12px;color:#a6c4ce;border-top:1px solid #245067;padding-top:12px}
+body.rt-prices .rt-terms{background:#11364a;border:1px solid #27657f;padding:21px;border-radius:14px;margin-top:28px;color:#d6eef5}
+body.rt-prices .rt-terms h2{color:#fff;margin:0 0 12px}
+body.rt-prices .rt-terms a{color:#6df4fc}
+@media(max-width:1020px){body.rt-prices .package-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){body.rt-prices .rt-info{display:block}body.rt-prices .rt-info a{display:inline-block;margin-top:12px}body.rt-prices .package-grid{grid-template-columns:1fr}body.rt-prices .monitor-price-page{margin:0;padding:10px;border-radius:0}body.rt-prices .monitor-price-table th,body.rt-prices .monitor-price-table td{padding:9px 10px;font-size:13px}}
