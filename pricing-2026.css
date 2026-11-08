@@ -5,20 +5,16 @@ body.rt-prices .monitor-price-card{max-width:1160px;background:#091e2d;color:#e7
 body.rt-prices .monitor-price-card h1{color:#f5fdff;text-align:left;margin:0 0 20px;font-size:clamp(26px,3vw,38px)}
 body.rt-prices .monitor-price-card .device-price-section-title{color:#54e3ec;margin:30px 0 13px;text-shadow:none}
 body.rt-prices .monitor-table-scroll{background:#0b2435;border:1px solid #235269;border-radius:13px;box-shadow:none}
-body.rt-prices table.monitor-price-table{min-width:790px;color:#eafaff;font-size:14px;border-collapse:collapse}
+body.rt-prices table.monitor-price-table{min-width:660px;color:#eafaff;font-size:14px;border-collapse:collapse}
 body.rt-prices .monitor-price-table th,body.rt-prices .monitor-price-table td{border:0;border-bottom:1px solid #1a3e50;padding:13px 15px;text-align:left;vertical-align:top;line-height:1.45}
 body.rt-prices .monitor-price-table thead th{background:#12374b;color:#b3f7fa;text-transform:uppercase;font-size:12px;letter-spacing:.035em}
 body.rt-prices .monitor-price-table tbody tr:nth-child(odd){background:#0e2a3b}
 body.rt-prices .monitor-price-table tbody tr:nth-child(even){background:#0a2130}
-body.rt-prices .monitor-price-table tbody tr.rt-updated{background:#12423f;border-left:3px solid #1ee9df}
-body.rt-prices .monitor-price-table tbody th{color:#f4ffff;font-weight:600;width:45%}
-body.rt-prices .monitor-price-table tbody td:nth-child(2){color:#d2fdff;width:29%}
-body.rt-prices .monitor-price-table tbody td:nth-child(3){color:#bfd8e1;width:13%}
-body.rt-prices .monitor-price-table tbody td:nth-child(4){width:13%}
+body.rt-prices .monitor-price-table tbody th{color:#f4ffff;font-weight:600;width:57%}
+body.rt-prices .monitor-price-table tbody td:nth-child(2){color:#d2fdff;width:28%}
+body.rt-prices .monitor-price-table tbody td:nth-child(3){color:#bfd8e1;width:15%}
 body.rt-prices .monitor-price-table strong{font-size:15px;color:#f1ffff}
 body.rt-prices .monitor-price-table small{display:block;color:#b4d3da;font-size:12px;margin-top:5px}
-body.rt-prices .rt-status{display:inline-block;font-size:11px;color:#b0d4de;background:#133447;border:1px solid #315e70;border-radius:6px;padding:4px 7px}
-body.rt-prices .rt-status.updated{color:#96ffdc;border-color:#2e9c76;background:#114335}
 body.rt-prices .monitor-price-notes{background:#103146;color:#e0f9ff;border:1px solid #2a6a82;border-left:4px solid #24dce7;border-radius:13px;margin-top:27px}
 body.rt-prices .monitor-price-notes h2{color:#f4ffff}
 body.rt-prices .monitor-price-notes li{margin-bottom:7px}
