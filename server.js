@@ -364,7 +364,11 @@ const server = http.createServer(async (request, response) => {
     response.end();
     return;
   }
-  if (requestUrl.pathname === "/api/accounting-auth") {\n    await handleAccountingAuth(request, response);\n    return;\n  }\n  if (requestUrl.pathname === "/health") {
+  if (requestUrl.pathname === "/api/accounting-auth") {
+    await handleAccountingAuth(request, response);
+    return;
+  }
+  if (requestUrl.pathname === "/health") {
     sendJson(response, 200, { ok: true });
     return;
   }
