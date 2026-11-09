@@ -1,5 +1,5 @@
-﻿const http = require("node:http");
-const { randomUUID } = require("node:crypto");
+const http = require("node:http");
+const { randomUUID, timingSafeEqual } = require("node:crypto");
 const fs = require("node:fs/promises");
 const path = require("node:path");
 
@@ -267,6 +267,44 @@ async function handleReviews(request, response) {
     sendJson(response, 500, { error: "Не удалось сохранить отзыв." });
   }
 }
+const accountingAuthAttempts = new Map();
+async function handleAccountingAuth(request, response) {
+  if (request.method !== "POST") {
+    sendJson(response, 405, { error: "Method not allowed" });
+    return;
+  }
+  if (!process.env.ACCOUNTING_PASSWORD) {
+    sendJson(response, 503, { error: "Accounting password is not configured." });
+    return;
+  }
+  try {
+    const body = await readJson(request);
+    const now = Date.now();
+    const ip = String(request.headers["x-forwarded-for"] || request.socket.remoteAddress || "unknown").split(",")[0].trim();
+    let attempt = accountingAuthAttempts.get(ip);
+    if (!attempt || now - attempt.startedAt > 60000) {
+      attempt = { startedAt: now, count: 0 };
+      accountingAuthAttempts.set(ip, attempt);
+    }
+    if (attempt.count >= 10) {
+      sendJson(response, 429, { error: "Too many attempts. Try again in one minute." });
+      return;
+    }
+    const provided = Buffer.from(String(body.password || ""));
+    const expected = Buffer.from(process.env.ACCOUNTING_PASSWORD);
+    if (provided.length !== expected.length || !timingSafeEqual(provided, expected)) {
+      attempt.count += 1;
+      sendJson(response, 401, { error: "Invalid password." });
+      return;
+    }
+    accountingAuthAttempts.delete(ip);
+    sendJson(response, 200, { authorized: true });
+  } catch (error) {
+    if (error.statusCode) sendJson(response, error.statusCode, { error: error.message });
+    else sendJson(response, 400, { error: "Invalid request." });
+  }
+}
+
 async function serveStatic(urlPath, response) {
   let decodedPath;
   try {
@@ -326,7 +364,7 @@ const server = http.createServer(async (request, response) => {
     response.end();
     return;
   }
-  if (requestUrl.pathname === "/health") {
+  if (requestUrl.pathname === "/api/accounting-auth") {\n    await handleAccountingAuth(request, response);\n    return;\n  }\n  if (requestUrl.pathname === "/health") {
     sendJson(response, 200, { ok: true });
     return;
   }
